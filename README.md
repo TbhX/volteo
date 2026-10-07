@@ -1,8 +1,8 @@
-# VOLTÉO 4.8.0 — connecté à Supabase
+# VOLTÉO 4.9.0 — connecté à Supabase
 
 Les comptes, dossiers acheteurs, simulations, favoris, demandes, offres et espaces professionnels utilisent désormais le projet Supabase configuré. Les recherches locales passent par une Edge Function Supabase. La refonte UI/UX 4.5 et la vidéo complète sont conservées.
 
-Version 4.8 : navigation latérale persistante et contenu central avec défilement indépendant. Voir **VALIDATION-V4.8.md**.
+Version 4.9 : vues desktop paginées sans défilement vertical, footer permanent, navigation précédente/suivante et transitions électriques. Voir **VALIDATION-V4.9.md**.
 
 Données 4.7 : base nationale IRVE et flux dynamique raccordés, actualisation automatique des carburants et offres affichées, page Sources et fraîcheur. Les prix véhicules et les guides restent de démonstration : aucun flux constructeur ou stock concessionnaire n’est raccordé. Voir **VALIDATION-V4.7.md**.
 
