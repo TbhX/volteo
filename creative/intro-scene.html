@@ -1,0 +1,45 @@
+<!doctype html><html><head><style>html,body{margin:0;background:#080f15}canvas{display:block}</style><script type="importmap">{"imports":{"three":"../node_modules/three/build/three.module.js","three/addons/":"../node_modules/three/examples/jsm/"}}</script></head><body><script type="module">
+import * as THREE from 'three';
+import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
+import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js';
+import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';
+import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
+import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js';
+import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
+const scene=new THREE.Scene();scene.background=new THREE.Color('#050c12');scene.fog=new THREE.FogExp2('#050c12',.033);
+const camera=new THREE.PerspectiveCamera(37,1280/720,.1,100);
+const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});renderer.setSize(1280,720);renderer.setPixelRatio(1);renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.72;renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;document.body.appendChild(renderer.domElement);
+const pmrem=new THREE.PMREMGenerator(renderer);const room=new RoomEnvironment();scene.environment=pmrem.fromScene(room,.04).texture;scene.environmentIntensity=.55;
+const composer=new EffectComposer(renderer);composer.addPass(new RenderPass(scene,camera));const bloom=new UnrealBloomPass(new THREE.Vector2(1280,720),.16,.25,1.3);composer.addPass(bloom);composer.addPass(new OutputPass());
+const metal=new THREE.MeshPhysicalMaterial({color:0x5c7279,metalness:.92,roughness:.21,clearcoat:1,clearcoatRoughness:.08});
+const dark=new THREE.MeshPhysicalMaterial({color:0x10191f,metalness:.65,roughness:.24,clearcoat:1});const rubber=new THREE.MeshStandardMaterial({color:0x080b0e,roughness:.8});const glass=new THREE.MeshPhysicalMaterial({color:0x101e27,metalness:.5,roughness:.07,clearcoat:1});
+const lime=new THREE.MeshStandardMaterial({color:0xbdf761,emissive:0xbdf761,emissiveIntensity:1.2});const cyan=new THREE.MeshStandardMaterial({color:0x54e3ee,emissive:0x54e3ee,emissiveIntensity:1.4});const white=new THREE.MeshStandardMaterial({color:0xeefff7,emissive:0xeafffa,emissiveIntensity:1.8});
+function mesh(g,m,parent=scene){const o=new THREE.Mesh(g,m);o.castShadow=true;o.receiveShadow=true;parent.add(o);return o;}
+function box(w,h,d,m,x,y,z,parent=scene,r=.03){const o=mesh(new RoundedBoxGeometry(w,h,d,3,r),m,parent);o.position.set(x,y,z);return o;}
+function tube(points,m,r=.02,parent=scene){return mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points.map(p=>new THREE.Vector3(...p))),60,r,8,false),m,parent);}
+function loft(sections,bottom,m,parent){const ps=[],ids=[],n=48;for(const [x,top,width] of sections){for(let j=0;j<n;j++){const angle=j/n*Math.PI*2;ps.push(x,(top+bottom)/2+Math.cos(angle)*(top-bottom)/2,Math.sin(angle)*width);}}for(let i=0;i<sections.length-1;i++)for(let j=0;j<n;j++){let a=i*n+j,b=i*n+(j+1)%n,c=(i+1)*n+j,d=(i+1)*n+(j+1)%n;ids.push(a,b,c,b,d,c);}const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(ps,3));g.setIndex(ids);g.computeVertexNormals();return mesh(g,m,parent);}
+const car=new THREE.Group();scene.add(car);
+loft([[-2.4,.64,.42],[-2.25,.84,.82],[-1.85,.98,.97],[-1.4,1.02,1.0],[-.6,1.05,1.0],[.4,1.02,.98],[1.4,.91,.94],[2.05,.74,.84],[2.33,.6,.5]],.42,metal,car);
+box(3.4,.12,1.8,dark,-.05,.43,0,car,.04);
+// Panoramic cabin, roof, and pillars.
+const cabinShape=new THREE.Shape();cabinShape.moveTo(-1.25,.97);cabinShape.quadraticCurveTo(-1.1,1.05,-.68,1.53);cabinShape.quadraticCurveTo(-.55,1.68,-.3,1.68);cabinShape.lineTo(.51,1.66);cabinShape.quadraticCurveTo(.75,1.59,1.35,.98);cabinShape.closePath();
+const cabinGeo=new THREE.ExtrudeGeometry(cabinShape,{depth:1.54,bevelEnabled:true,bevelSegments:6,steps:1,bevelSize:.08,bevelThickness:.08,curveSegments:24});const cabin=mesh(cabinGeo,glass,car);cabin.position.z=-.77;
+tube([[-1.3,1.0,-.81],[-.75,1.6,-.72],[-.3,1.73,-.7],[.45,1.71,-.7],[1.4,1.02,-.8]],metal,.043,car);tube([[-1.3,1,-.81],[-1.3,1,.81]],metal,.03,car);
+tube([[-1.3,1,.81],[-.75,1.6,.72],[-.3,1.73,.7],[.45,1.71,.7],[1.4,1.02,.8]],metal,.043,car);box(.045,.58,1.62,dark,-.08,1.32,0,car,.01);box(.76,.05,1.44,metal,.08,1.71,0,car,.02);
+for(const z of [-1.02,1.02]){box(2.8,.024,.022,cyan,0,.52,z,car,.008);box(.23,.03,.045,metal,.22,1.03,z*.89,car,.01);box(.25,.04,.045,metal,-.72,1.03,z*.89,car,.01);box(.2,.07,.16,dark,.95,1.13,z,car,.025);}
+box(.034,.045,1.55,white,2.13,.74,0,car,.01);box(.08,.14,1.28,dark,2.13,.56,0,car,.02);box(.035,.035,1.58,new THREE.MeshStandardMaterial({color:0xff434b,emissive:0xff232b,emissiveIntensity:1.2}),-2.18,.79,0,car,.01);
+const wheels=[];for(const x of [-1.5,1.48])for(const z of [-1.03,1.03]){const group=new THREE.Group();group.position.set(x,.49,z);car.add(group);const tire=mesh(new THREE.CylinderGeometry(.46,.46,.25,48),rubber,group);tire.rotation.x=Math.PI/2;const rim=mesh(new THREE.CylinderGeometry(.34,.34,.26,48),dark,group);rim.rotation.x=Math.PI/2;const faceZ=z>0?.145:-.145;for(let a=0;a<5;a++){const spoke=box(.11,.52,.02,metal,0,0,faceZ,group,.015);spoke.rotation.z=a*Math.PI*2/5;}const hub=mesh(new THREE.CylinderGeometry(.09,.09,.29,24),metal,group);hub.rotation.x=Math.PI/2;wheels.push(group);}
+const port=mesh(new THREE.CylinderGeometry(.1,.1,.04,24),lime,car);port.rotation.x=Math.PI/2;port.position.set(-.95,1.12,1.0);
+const ground=mesh(new THREE.PlaneGeometry(80,80),new THREE.MeshStandardMaterial({color:0x070d13,metalness:.3,roughness:.38}));ground.rotation.x=-Math.PI/2;ground.position.y=.02;
+const shadow=mesh(new THREE.PlaneGeometry(6.1,3.3),new THREE.MeshBasicMaterial({color:0x020609,transparent:true,opacity:.55}));shadow.rotation.x=-Math.PI/2;shadow.position.y=.03;shadow.visible=false;
+// Charger as sculptural totem, animated connection and underbody energy paths.
+const charging=new THREE.Group();scene.add(charging);box(.6,1.85,.42,dark,-3.8,.96,1.75,charging,.08);box(.46,.72,.03,glass,-3.8,1.18,2.0,charging,.02);box(.035,1.6,.02,lime,-4.05,.96,2.01,charging,.005);box(.035,1.6,.02,lime,-3.55,.96,2.01,charging,.005);box(.5,.035,.02,lime,-3.8,1.75,2.01,charging,.005);
+const cable=tube([[-3.6,.75,2],[-3.15,.42,2.2],[-2.2,.3,1.6],[-1.45,.54,1.2],[-.95,1.12,1.04]],new THREE.MeshStandardMaterial({color:0x111c20,roughness:.5}),.04,charging);
+const energyCable=tube([[-3.6,.75,2],[-3.15,.42,2.2],[-2.2,.3,1.6],[-1.45,.54,1.2],[-.95,1.12,1.07]],cyan,.012,charging);
+const energy=new THREE.Group();scene.add(energy);for(let i=0;i<11;i++){box(.23,.025,1.48,i%2?lime:cyan,-1.35+i*.27,.13,0,energy,.01);}for(const z of [-1.8,1.8])box(14,.006,.012,cyan,0,.035,z,energy,.002);
+const key=new THREE.SpotLight(0xdcefff,90,30,.65,.8,1.2);key.position.set(2,7,4);key.castShadow=true;key.shadow.mapSize.set(1024,1024);key.target=car;scene.add(key);
+const fill=new THREE.PointLight(0x73e6fa,12,18);fill.position.set(-2,3,-4);scene.add(fill);const rimLight=new THREE.PointLight(0xc6ff82,11,15);rimLight.position.set(1,2,4);scene.add(rimLight);scene.add(new THREE.AmbientLight(0x8ba7b7,.28));const underglow=new THREE.PointLight(0x65f5d0,2,6);underglow.position.set(0,.3,0);scene.add(underglow);
+const curve=new THREE.CatmullRomCurve3([new THREE.Vector3(5.4,1.42,4.9),new THREE.Vector3(5.3,2.5,7.3),new THREE.Vector3(3.6,3.2,8.5),new THREE.Vector3(1.2,3.1,9.2),new THREE.Vector3(4.6,2.15,8.2)]);
+window.renderAt=(t)=>{const u=Math.min(t/9,1);const p=curve.getPoint(u);camera.position.copy(p);camera.lookAt(t<2?new THREE.Vector3(.5,.9,0):new THREE.Vector3(-.4,.9,.25));charging.visible=t>2.6;energy.visible=t>4;energyCable.visible=t>3.4;underglow.intensity=t>4?1:0;fill.intensity=5+Math.sin(t*.8)*2;key.intensity=35+Math.sin(t*.4)*10;white.emissiveIntensity=t<1.2?.5+t:1.7;car.rotation.y=.05*Math.sin(t*.4);bloom.strength=t>4?.2:.12;composer.render();return renderer.domElement.toDataURL('image/jpeg',.91).split(',')[1];};
+window.renderAt(4.5);window.ready=true;
+</script></body></html>
