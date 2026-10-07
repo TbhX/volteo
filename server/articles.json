@@ -1,0 +1,80 @@
+[
+  {
+    "slug": "10-questions-avant-electrique",
+    "category": "Débuter en électrique",
+    "title": "10 questions à se poser avant de passer à l'électrique",
+    "excerpt": "Avant de changer de voiture, faites le point sur votre usage réel : trajets, recharge, budget et attentes.",
+    "body": [
+      "Passer à l'électrique n'est pas qu'une question de modèle : c'est avant tout une question d'usage. Avant de vous décider, prenez le temps de répondre honnêtement à quelques questions simples.",
+      "Combien de kilomètres parcourez-vous réellement chaque semaine ? Beaucoup d'automobilistes surestiment leurs trajets annuels, ce qui les pousse à chercher une autonomie bien supérieure à leur besoin réel — et donc un véhicule plus cher que nécessaire.",
+      "Pouvez-vous recharger là où vous dormez ? C'est souvent le critère le plus déterminant. Une recharge à domicile ou sur le lieu de travail change complètement le rapport à l'autonomie, alors qu'une dépendance aux bornes publiques demande plus d'organisation.",
+      "Quel est votre budget total, assurance et entretien compris ? Le prix d'achat n'est qu'une partie de l'équation : l'entretien plus faible et le coût de recharge inférieur au carburant peuvent compenser un prix d'achat plus élevé sur la durée.",
+      "Enfin, quel usage annexe faites-vous de votre voiture — remorque, longs trajets d'été, transport de matériel ? Ce sont ces cas particuliers qui orientent souvent le choix final plus que l'usage quotidien."
+    ]
+  },
+  {
+    "slug": "vacances-en-electrique",
+    "category": "Comparatifs",
+    "title": "Peut-on vraiment partir en vacances en voiture électrique ?",
+    "excerpt": "Oui, mais la préparation change : itinéraire, bornes rapides et pauses deviennent partie intégrante du trajet.",
+    "body": [
+      "Partir en vacances en voiture électrique est aujourd'hui tout à fait réaliste, à condition d'anticiper un peu différemment qu'avec un véhicule thermique.",
+      "La clé est la vitesse de recharge rapide du véhicule choisi : les modèles capables de récupérer 80 % de batterie en moins de 20 minutes rendent les longs trajets bien plus confortables que les modèles plus lents.",
+      "Les applications de planification d'itinéraire intègrent désormais les bornes rapides disponibles sur le trajet, avec une estimation du temps de charge nécessaire pour atteindre l'étape suivante.",
+      "En pratique, une pause de recharge de 20 à 25 minutes toutes les deux à trois heures de route s'intègre naturellement dans un trajet de vacances, au même rythme qu'une pause classique.",
+      "Le point de vigilance reste la disponibilité des bornes en période de forte affluence, notamment sur les grands axes en juillet et août : mieux vaut prévoir une marge et une solution de repli."
+    ]
+  },
+  {
+    "slug": "recharge-domicile",
+    "category": "Recharge",
+    "title": "Recharge à domicile : ce qu'il faut savoir",
+    "excerpt": "Prise renforcée ou borne murale : les deux solutions n'offrent pas le même confort au quotidien.",
+    "body": [
+      "La recharge à domicile est, pour la grande majorité des conducteurs, la solution la plus simple et la plus économique au quotidien.",
+      "Une prise domestique renforcée permet de recharger une batterie, mais lentement : comptez généralement une nuit complète pour retrouver une charge confortable après un usage quotidien classique.",
+      "Une borne murale dédiée (souvent appelée wallbox) délivre une puissance plus élevée et réduit sensiblement le temps de charge, tout en sécurisant l'installation électrique sur la durée.",
+      "En copropriété, le cadre légal du 'droit à la prise' permet de demander l'installation d'un point de recharge sur une place de stationnement, sous certaines conditions à vérifier avec le syndic.",
+      "Dans tous les cas, faire appel à un installateur qualifié est recommandé pour dimensionner correctement l'installation électrique du logement."
+    ]
+  },
+  {
+    "slug": "occasion-points-verifier",
+    "category": "Occasion",
+    "title": "Acheter une voiture électrique d'occasion : les points à vérifier",
+    "excerpt": "L'état de la batterie et l'historique de recharge comptent bien plus que le kilométrage seul.",
+    "body": [
+      "Contrairement à un moteur thermique, ce qui détermine surtout la valeur d'une électrique d'occasion, c'est l'état de santé de sa batterie plus que son kilométrage affiché.",
+      "Demandez systématiquement un diagnostic de l'état de santé de la batterie (souvent appelé State of Health). Une dégradation modérée est normale avec l'âge, une dégradation importante doit alerter.",
+      "Renseignez-vous sur les habitudes de recharge du précédent propriétaire : des recharges rapides très fréquentes peuvent accélérer l'usure de la batterie par rapport à une recharge lente à domicile.",
+      "Vérifiez la garantie batterie restante : la plupart des constructeurs garantissent la batterie plusieurs années ou jusqu'à un certain kilométrage, ce qui peut encore s'appliquer sur un véhicule d'occasion récent.",
+      "Enfin, testez la recharge rapide lors de l'essai si possible : c'est un bon indicateur du comportement réel du véhicule sur route."
+    ]
+  },
+  {
+    "slug": "batterie-avec-le-temps",
+    "category": "Débuter en électrique",
+    "title": "Que devient la batterie d'une voiture électrique avec le temps ?",
+    "excerpt": "Comme toute batterie, elle perd un peu de capacité chaque année, mais bien plus lentement qu'on ne le pense.",
+    "body": [
+      "L'usure de la batterie est une inquiétude fréquente chez les futurs acheteurs, souvent alimentée par la comparaison avec la batterie d'un smartphone.",
+      "En réalité, les batteries automobiles sont conçues et gérées différemment, avec des systèmes de refroidissement et de gestion qui ralentissent nettement leur vieillissement.",
+      "La plupart des constructeurs garantissent aujourd'hui la batterie pendant 8 ans ou environ 160 000 km, avec un seuil de capacité minimum garanti sur cette période.",
+      "Dans les faits, les retours d'usage sur les premières générations de véhicules électriques montrent une dégradation généralement limitée après plusieurs années d'utilisation normale.",
+      "Adopter de bonnes habitudes — éviter les charges à 100 % en permanence, limiter les recharges rapides répétées — contribue à préserver la batterie sur la durée."
+    ]
+  },
+  {
+    "slug": "financement-loa-lld",
+    "category": "Financement",
+    "title": "Achat, LOA ou LLD : comment choisir pour une électrique ?",
+    "excerpt": "Chaque mode de financement change votre rapport au risque de revente et à l'évolution technologique.",
+    "body": [
+      "Le choix du mode de financement prend une dimension particulière avec l'électrique, un marché encore jeune où la technologie évolue vite.",
+      "L'achat comptant reste pertinent pour un usage long et stable, avec une bonne visibilité sur ses besoins futurs et l'envie de conserver le véhicule plusieurs années.",
+      "La location avec option d'achat (LOA) permet d'étaler le coût tout en gardant la possibilité d'acheter le véhicule en fin de contrat, une fois sa valeur réelle mieux connue.",
+      "La location longue durée (LLD) séduit ceux qui préfèrent changer régulièrement de véhicule et éviter la question de la revente, avec un entretien souvent inclus.",
+      "Dans les trois cas, il est utile de comparer le coût total sur la durée d'utilisation prévue plutôt que la seule mensualité affichée."
+    ]
+  }
+]

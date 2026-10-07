@@ -1,0 +1,8 @@
+# Private demonstration on a dedicated domain. Replace every placeholder.
+# Generate hash: caddy hash-password (interactive). Never use a plaintext password here.
+demo.votre-domaine.fr {
+    basic_auth {
+        presentation REPLACE_WITH_CADDY_PASSWORD_HASH
+    }
+    reverse_proxy 127.0.0.1:8080
+}

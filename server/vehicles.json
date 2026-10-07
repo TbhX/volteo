@@ -1,0 +1,1180 @@
+[
+  {
+    "slug": "peugeot-e-208",
+    "brand": "Peugeot",
+    "model": "e-208",
+    "category": "Citadine",
+    "priceMin": 33000,
+    "priceMax": 37000,
+    "autonomy": 400,
+    "conso": 15.5,
+    "fastKW": 100,
+    "fastTime": 30,
+    "power": 156,
+    "seats": 4,
+    "trunk": 265,
+    "drivetrain": "Traction",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf",
+      "Occasion"
+    ],
+    "hue": 150,
+    "strengths": [
+      "prix",
+      "design",
+      "consommation"
+    ],
+    "forDriver": "Un premier pas serein vers l'électrique pour un usage urbain et périurbain, avec un format compact facile à garer.",
+    "considerations": [
+      "Coffre modeste pour une famille nombreuse",
+      "Autonomie autoroutière à surveiller au-delà de 120 km/h"
+    ]
+  },
+  {
+    "slug": "renault-5-e-tech",
+    "brand": "Renault",
+    "model": "5 E-Tech",
+    "category": "Citadine",
+    "priceMin": 25000,
+    "priceMax": 32000,
+    "autonomy": 400,
+    "conso": 14.5,
+    "fastKW": 100,
+    "fastTime": 30,
+    "power": 150,
+    "seats": 4,
+    "trunk": 326,
+    "drivetrain": "Traction",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf"
+    ],
+    "hue": 150,
+    "strengths": [
+      "prix",
+      "design",
+      "technologie"
+    ],
+    "forDriver": "Idéale pour un conducteur urbain qui veut une citadine électrique moderne sans faire exploser son budget.",
+    "considerations": [
+      "Version d'entrée de gamme à autonomie plus limitée",
+      "Recharge rapide en option selon finition"
+    ]
+  },
+  {
+    "slug": "fiat-500e",
+    "brand": "Fiat",
+    "model": "500e",
+    "category": "Citadine",
+    "priceMin": 27000,
+    "priceMax": 31000,
+    "autonomy": 320,
+    "conso": 14.8,
+    "fastKW": 85,
+    "fastTime": 35,
+    "power": 118,
+    "seats": 4,
+    "trunk": 185,
+    "drivetrain": "Traction",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf",
+      "Occasion"
+    ],
+    "hue": 150,
+    "strengths": [
+      "prix",
+      "design"
+    ],
+    "forDriver": "Une citadine électrique au format compact, pensée pour la ville plutôt que pour les longs trajets.",
+    "considerations": [
+      "Autonomie limitée pour un usage routier fréquent",
+      "Coffre réduit"
+    ]
+  },
+  {
+    "slug": "renault-megane-e-tech",
+    "brand": "Renault",
+    "model": "Mégane E-Tech",
+    "category": "Compacte",
+    "priceMin": 37000,
+    "priceMax": 44000,
+    "autonomy": 450,
+    "conso": 15,
+    "fastKW": 130,
+    "fastTime": 30,
+    "power": 220,
+    "seats": 5,
+    "trunk": 440,
+    "drivetrain": "Traction",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf"
+    ],
+    "hue": 150,
+    "strengths": [
+      "autonomie",
+      "technologie",
+      "confort"
+    ],
+    "forDriver": "Un très bon compromis pour un usage mixte ville/route, avec un habitacle spacieux et connecté.",
+    "considerations": [
+      "Consommation en hausse sur autoroute rapide",
+      "Prix en haut de la fourchette compacte"
+    ]
+  },
+  {
+    "slug": "volkswagen-id3",
+    "brand": "Volkswagen",
+    "model": "ID.3",
+    "category": "Compacte",
+    "priceMin": 36000,
+    "priceMax": 42000,
+    "autonomy": 430,
+    "conso": 15.4,
+    "fastKW": 120,
+    "fastTime": 28,
+    "power": 204,
+    "seats": 5,
+    "trunk": 385,
+    "drivetrain": "Traction",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf",
+      "Occasion"
+    ],
+    "hue": 216,
+    "strengths": [
+      "coffre",
+      "confort",
+      "autonomie"
+    ],
+    "forDriver": "Pensée pour les trajets domicile-travail réguliers et les week-ends en famille restreinte.",
+    "considerations": [
+      "Ergonomie des commandes tactiles perfectible",
+      "Finitions d'entrée de gamme sobres"
+    ]
+  },
+  {
+    "slug": "tesla-model-3",
+    "brand": "Tesla",
+    "model": "Model 3",
+    "category": "Berline",
+    "priceMin": 42000,
+    "priceMax": 52000,
+    "autonomy": 530,
+    "conso": 14.9,
+    "fastKW": 170,
+    "fastTime": 27,
+    "power": 283,
+    "seats": 5,
+    "trunk": 594,
+    "drivetrain": "Traction (version Intégrale disponible)",
+    "warranty": "8 ans / 192 000 km (batterie)",
+    "condition": [
+      "Neuf",
+      "Occasion"
+    ],
+    "hue": 216,
+    "strengths": [
+      "autonomie",
+      "performances",
+      "recharge rapide",
+      "technologie"
+    ],
+    "forDriver": "Pour les grands rouleurs qui veulent enchaîner les trajets longue distance sans anxiété d'autonomie.",
+    "considerations": [
+      "Habitacle épuré qui déroute certains conducteurs",
+      "Réseau d'entretien plus rare qu'un réseau généraliste"
+    ]
+  },
+  {
+    "slug": "tesla-model-y",
+    "brand": "Tesla",
+    "model": "Model Y",
+    "category": "SUV",
+    "priceMin": 45000,
+    "priceMax": 56000,
+    "autonomy": 530,
+    "conso": 15.9,
+    "fastKW": 170,
+    "fastTime": 27,
+    "power": 299,
+    "seats": 5,
+    "trunk": 854,
+    "drivetrain": "Propulsion (version Intégrale disponible)",
+    "warranty": "8 ans / 192 000 km (batterie)",
+    "condition": [
+      "Neuf",
+      "Occasion"
+    ],
+    "hue": 216,
+    "strengths": [
+      "coffre",
+      "autonomie",
+      "technologie",
+      "performances"
+    ],
+    "forDriver": "Un SUV familial taillé pour les longs trajets et les vacances, avec un coffre parmi les plus grands du marché.",
+    "considerations": [
+      "Gabarit qui peut compliquer le stationnement en centre-ville",
+      "Prix d'accès élevé"
+    ]
+  },
+  {
+    "slug": "hyundai-ioniq5",
+    "brand": "Hyundai",
+    "model": "Ioniq 5",
+    "category": "SUV",
+    "priceMin": 43000,
+    "priceMax": 54000,
+    "autonomy": 507,
+    "conso": 16.8,
+    "fastKW": 220,
+    "fastTime": 18,
+    "power": 170,
+    "seats": 5,
+    "trunk": 527,
+    "drivetrain": "Traction (version Intégrale disponible)",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf"
+    ],
+    "hue": 216,
+    "strengths": [
+      "recharge rapide",
+      "technologie",
+      "coffre"
+    ],
+    "forDriver": "Pour qui privilégie les temps de recharge très courts sur autoroute et un habitacle design.",
+    "considerations": [
+      "Consommation plus élevée que la moyenne des SUV électriques",
+      "Vitrage arrière qui limite un peu la visibilité"
+    ]
+  },
+  {
+    "slug": "kia-ev6",
+    "brand": "Kia",
+    "model": "EV6",
+    "category": "Familiale",
+    "priceMin": 44000,
+    "priceMax": 55000,
+    "autonomy": 528,
+    "conso": 16.1,
+    "fastKW": 240,
+    "fastTime": 18,
+    "power": 170,
+    "seats": 5,
+    "trunk": 490,
+    "drivetrain": "Traction (version Intégrale disponible)",
+    "warranty": "7 ans / 150 000 km (véhicule)",
+    "condition": [
+      "Neuf"
+    ],
+    "hue": 33,
+    "strengths": [
+      "recharge rapide",
+      "performances",
+      "design"
+    ],
+    "forDriver": "Une familiale dynamique pour ceux qui veulent une recharge quasi aussi rapide qu'un plein d'essence.",
+    "considerations": [
+      "Places arrière un peu justes en hauteur pour les grands gabarits",
+      "Coffre moyen pour la catégorie familiale"
+    ]
+  },
+  {
+    "slug": "skoda-enyaq",
+    "brand": "Škoda",
+    "model": "Enyaq",
+    "category": "Familiale",
+    "priceMin": 41000,
+    "priceMax": 50000,
+    "autonomy": 557,
+    "conso": 15.7,
+    "fastKW": 135,
+    "fastTime": 28,
+    "power": 170,
+    "seats": 5,
+    "trunk": 585,
+    "drivetrain": "Traction (version Intégrale disponible)",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf"
+    ],
+    "hue": 33,
+    "strengths": [
+      "coffre",
+      "confort",
+      "autonomie"
+    ],
+    "forDriver": "Le choix pragmatique d'une famille qui roule beaucoup et veut un grand coffre sans complexité inutile.",
+    "considerations": [
+      "Style plus sobre que la concurrence",
+      "Options technologiques qui font vite grimper le prix"
+    ]
+  },
+  {
+    "slug": "bmw-ix1",
+    "brand": "BMW",
+    "model": "iX1",
+    "category": "Premium",
+    "shape": "suv",
+    "priceMin": 49000,
+    "priceMax": 58000,
+    "autonomy": 430,
+    "conso": 17.9,
+    "fastKW": 130,
+    "fastTime": 29,
+    "power": 313,
+    "seats": 5,
+    "trunk": 490,
+    "drivetrain": "Intégrale",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf"
+    ],
+    "hue": 216,
+    "strengths": [
+      "performances",
+      "confort",
+      "technologie"
+    ],
+    "forDriver": "Pour un usage polyvalent avec un niveau de finition premium et de bonnes performances en toutes conditions.",
+    "considerations": [
+      "Autonomie en retrait sur autoroute rapide",
+      "Consommation plus élevée que la moyenne"
+    ]
+  },
+  {
+    "slug": "porsche-taycan",
+    "brand": "Porsche",
+    "model": "Taycan",
+    "category": "Premium",
+    "shape": "sport",
+    "priceMin": 92000,
+    "priceMax": 115000,
+    "autonomy": 440,
+    "conso": 19.6,
+    "fastKW": 270,
+    "fastTime": 18,
+    "power": 408,
+    "seats": 4,
+    "trunk": 407,
+    "drivetrain": "Intégrale (versions Turbo disponibles)",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf",
+      "Occasion"
+    ],
+    "hue": 33,
+    "strengths": [
+      "performances",
+      "recharge rapide",
+      "design"
+    ],
+    "forDriver": "Pour un conducteur exigeant qui veut des sensations sportives sans renoncer à l'électrique au quotidien.",
+    "considerations": [
+      "Budget nettement supérieur à la moyenne du marché",
+      "Consommation élevée en conduite dynamique"
+    ]
+  },
+  {
+    "slug": "citroen-e-c4",
+    "brand": "Citroën",
+    "model": "ë-C4",
+    "category": "Compacte",
+    "shape": "citadine",
+    "priceMin": 33000,
+    "priceMax": 38000,
+    "autonomy": 420,
+    "conso": 15.8,
+    "fastKW": 100,
+    "fastTime": 30,
+    "power": 156,
+    "seats": 5,
+    "trunk": 380,
+    "drivetrain": "Traction",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf",
+      "Occasion"
+    ],
+    "hue": 150,
+    "strengths": [
+      "confort",
+      "prix",
+      "design"
+    ],
+    "forDriver": "Une compacte confortable pensée pour absorber les petites routes et les longs trajets en douceur.",
+    "considerations": [
+      "Dynamisme routier en retrait face à la concurrence",
+      "Autonomie moyenne sur autoroute"
+    ]
+  },
+  {
+    "slug": "opel-corsa-electric",
+    "brand": "Opel",
+    "model": "Corsa Electric",
+    "category": "Citadine",
+    "shape": "citadine",
+    "priceMin": 32000,
+    "priceMax": 36000,
+    "autonomy": 357,
+    "conso": 16.1,
+    "fastKW": 100,
+    "fastTime": 28,
+    "power": 156,
+    "seats": 4,
+    "trunk": 267,
+    "drivetrain": "Traction",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf",
+      "Occasion"
+    ],
+    "hue": 150,
+    "strengths": [
+      "prix",
+      "consommation"
+    ],
+    "forDriver": "Une citadine simple et efficace pour un usage urbain quotidien, sans fioritures.",
+    "considerations": [
+      "Autonomie plus juste que la moyenne des citadines récentes",
+      "Coffre modeste"
+    ]
+  },
+  {
+    "slug": "cupra-born",
+    "brand": "Cupra",
+    "model": "Born",
+    "category": "Compacte",
+    "shape": "citadine",
+    "priceMin": 38000,
+    "priceMax": 45000,
+    "autonomy": 420,
+    "conso": 16.2,
+    "fastKW": 135,
+    "fastTime": 27,
+    "power": 231,
+    "seats": 5,
+    "trunk": 385,
+    "drivetrain": "Traction (version performance disponible)",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf"
+    ],
+    "hue": 216,
+    "strengths": [
+      "performances",
+      "technologie",
+      "design"
+    ],
+    "forDriver": "Pour un conducteur qui veut du caractère et de la sportivité dans une compacte électrique.",
+    "considerations": [
+      "Confort de suspension plus ferme que la moyenne",
+      "Places arrière justes pour les grands trajets"
+    ]
+  },
+  {
+    "slug": "mg4-electric",
+    "brand": "MG",
+    "model": "4 Electric",
+    "category": "Compacte",
+    "shape": "citadine",
+    "priceMin": 30000,
+    "priceMax": 37000,
+    "autonomy": 435,
+    "conso": 15.7,
+    "fastKW": 135,
+    "fastTime": 28,
+    "power": 170,
+    "seats": 5,
+    "trunk": 363,
+    "drivetrain": "Propulsion",
+    "warranty": "7 ans / 150 000 km (véhicule)",
+    "condition": [
+      "Neuf"
+    ],
+    "hue": 150,
+    "strengths": [
+      "prix",
+      "autonomie"
+    ],
+    "forDriver": "Un excellent rapport autonomie/prix pour qui veut une compacte électrique sans se ruiner.",
+    "considerations": [
+      "Réseau après-vente encore en développement en France",
+      "Finitions intérieures en retrait sur le haut de gamme"
+    ]
+  },
+  {
+    "slug": "byd-dolphin",
+    "brand": "BYD",
+    "model": "Dolphin",
+    "category": "Citadine",
+    "shape": "citadine",
+    "priceMin": 30000,
+    "priceMax": 34000,
+    "autonomy": 427,
+    "conso": 14.5,
+    "fastKW": 88,
+    "fastTime": 30,
+    "power": 150,
+    "seats": 5,
+    "trunk": 345,
+    "drivetrain": "Traction",
+    "warranty": "8 ans / 150 000 km (batterie)",
+    "condition": [
+      "Neuf"
+    ],
+    "hue": 150,
+    "strengths": [
+      "prix",
+      "consommation"
+    ],
+    "forDriver": "Une citadine efficiente au très bon rapport autonomie/consommation pour un usage quotidien.",
+    "considerations": [
+      "Marque encore peu connue du grand public en France",
+      "Recharge rapide plus lente que la concurrence"
+    ]
+  },
+  {
+    "slug": "byd-atto3",
+    "brand": "BYD",
+    "model": "Atto 3",
+    "category": "SUV",
+    "shape": "suv",
+    "priceMin": 38000,
+    "priceMax": 42000,
+    "autonomy": 420,
+    "conso": 16.5,
+    "fastKW": 88,
+    "fastTime": 45,
+    "power": 204,
+    "seats": 5,
+    "trunk": 440,
+    "drivetrain": "Traction",
+    "warranty": "8 ans / 150 000 km (batterie)",
+    "condition": [
+      "Neuf"
+    ],
+    "hue": 216,
+    "strengths": [
+      "coffre",
+      "prix",
+      "technologie"
+    ],
+    "forDriver": "Un SUV familial généreux en équipements pour un budget inférieur aux références du marché.",
+    "considerations": [
+      "Recharge rapide plus lente que la moyenne des SUV électriques",
+      "Design intérieur qui ne plaira pas à tous"
+    ]
+  },
+  {
+    "slug": "mercedes-eqa",
+    "brand": "Mercedes",
+    "model": "EQA",
+    "category": "Premium",
+    "shape": "suv",
+    "priceMin": 48000,
+    "priceMax": 56000,
+    "autonomy": 430,
+    "conso": 17.7,
+    "fastKW": 100,
+    "fastTime": 32,
+    "power": 292,
+    "seats": 5,
+    "trunk": 340,
+    "drivetrain": "Traction (version Intégrale disponible)",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf",
+      "Occasion"
+    ],
+    "hue": 216,
+    "strengths": [
+      "confort",
+      "technologie"
+    ],
+    "forDriver": "Pour un usage polyvalent avec un confort et une qualité de finition premium au quotidien.",
+    "considerations": [
+      "Coffre plus petit que la moyenne des SUV premium",
+      "Autonomie en retrait face aux références récentes"
+    ]
+  },
+  {
+    "slug": "audi-q4-etron",
+    "brand": "Audi",
+    "model": "Q4 e-tron",
+    "category": "Premium",
+    "shape": "suv",
+    "priceMin": 50000,
+    "priceMax": 62000,
+    "autonomy": 520,
+    "conso": 17.4,
+    "fastKW": 135,
+    "fastTime": 28,
+    "power": 340,
+    "seats": 5,
+    "trunk": 520,
+    "drivetrain": "Traction (version quattro disponible)",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf",
+      "Occasion"
+    ],
+    "hue": 216,
+    "strengths": [
+      "autonomie",
+      "confort",
+      "coffre"
+    ],
+    "forDriver": "Un SUV premium taillé pour les longs trajets en famille, avec une bonne autonomie réelle.",
+    "considerations": [
+      "Prix qui grimpe vite avec les options",
+      "Poids important qui influence la consommation en ville"
+    ]
+  },
+  {
+    "slug": "volvo-ex30",
+    "brand": "Volvo",
+    "model": "EX30",
+    "category": "SUV",
+    "shape": "suv",
+    "priceMin": 36000,
+    "priceMax": 42000,
+    "autonomy": 480,
+    "conso": 16,
+    "fastKW": 153,
+    "fastTime": 26,
+    "power": 315,
+    "seats": 5,
+    "trunk": 318,
+    "drivetrain": "Traction (version bi-moteur disponible)",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf"
+    ],
+    "hue": 216,
+    "strengths": [
+      "design",
+      "performances",
+      "technologie"
+    ],
+    "forDriver": "Un petit SUV premium pensé pour la ville, au design soigné et aux performances surprenantes.",
+    "considerations": [
+      "Coffre modeste pour la catégorie SUV",
+      "Ergonomie tout tactile qui ne plaira pas à tous"
+    ]
+  },
+  {
+    "slug": "alpine-a290",
+    "brand": "Alpine",
+    "model": "A290",
+    "category": "Citadine",
+    "shape": "citadine",
+    "priceMin": 38000,
+    "priceMax": 43000,
+    "autonomy": 380,
+    "conso": 16.5,
+    "fastKW": 100,
+    "fastTime": 30,
+    "power": 220,
+    "seats": 4,
+    "trunk": 326,
+    "drivetrain": "Traction",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf"
+    ],
+    "hue": 33,
+    "strengths": [
+      "performances",
+      "design"
+    ],
+    "forDriver": "Une citadine sportive pour qui veut du plaisir de conduite sans passer à un gros gabarit.",
+    "considerations": [
+      "Autonomie plus juste si vous roulez beaucoup sur autoroute",
+      "Confort ferme, orienté dynamisme"
+    ]
+  },
+  {
+    "slug": "ds3-etense",
+    "brand": "DS",
+    "model": "3 E-Tense",
+    "category": "Citadine",
+    "shape": "citadine",
+    "priceMin": 39000,
+    "priceMax": 43000,
+    "autonomy": 400,
+    "conso": 16.4,
+    "fastKW": 100,
+    "fastTime": 30,
+    "power": 156,
+    "seats": 5,
+    "trunk": 350,
+    "drivetrain": "Traction",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf"
+    ],
+    "hue": 150,
+    "strengths": [
+      "confort",
+      "design"
+    ],
+    "forDriver": "Une citadine premium et soignée pour un usage urbain avec une touche de distinction.",
+    "considerations": [
+      "Prix élevé pour le segment citadine",
+      "Visibilité arrière limitée"
+    ]
+  },
+  {
+    "slug": "jeep-avenger-electric",
+    "brand": "Jeep",
+    "model": "Avenger Electric",
+    "category": "SUV",
+    "shape": "suv",
+    "priceMin": 36000,
+    "priceMax": 40000,
+    "autonomy": 400,
+    "conso": 16,
+    "fastKW": 100,
+    "fastTime": 24,
+    "power": 156,
+    "seats": 5,
+    "trunk": 355,
+    "drivetrain": "Traction",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf"
+    ],
+    "hue": 33,
+    "strengths": [
+      "design",
+      "consommation"
+    ],
+    "forDriver": "Un SUV compact au look affirmé pour un usage urbain et périurbain avec un format facile à vivre.",
+    "considerations": [
+      "Pas de version intégrale électrique disponible",
+      "Coffre moyen pour la catégorie SUV"
+    ]
+  },
+  {
+    "slug": "mini-cooper-electric",
+    "brand": "Mini",
+    "model": "Cooper Electric",
+    "category": "Citadine",
+    "shape": "citadine",
+    "priceMin": 33000,
+    "priceMax": 40000,
+    "autonomy": 400,
+    "conso": 15.2,
+    "fastKW": 95,
+    "fastTime": 30,
+    "power": 218,
+    "seats": 4,
+    "trunk": 210,
+    "drivetrain": "Traction",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf",
+      "Occasion"
+    ],
+    "hue": 150,
+    "strengths": [
+      "design",
+      "performances"
+    ],
+    "forDriver": "Une citadine premium au caractère affirmé, pour qui privilégie le style et l'agrément de conduite en ville.",
+    "considerations": [
+      "Coffre très limité pour les longs trajets",
+      "Places arrière étroites"
+    ]
+  },
+  {
+    "slug": "dacia-spring",
+    "brand": "Dacia",
+    "model": "Spring",
+    "category": "Citadine",
+    "shape": "citadine",
+    "priceMin": 19800,
+    "priceMax": 23000,
+    "autonomy": 225,
+    "conso": 14.5,
+    "fastKW": 30,
+    "fastTime": 45,
+    "power": 65,
+    "seats": 4,
+    "trunk": 308,
+    "drivetrain": "Traction",
+    "warranty": "8 ans / 120 000 km (batterie)",
+    "condition": [
+      "Neuf",
+      "Occasion"
+    ],
+    "hue": 150,
+    "strengths": [
+      "prix"
+    ],
+    "forDriver": "L'électrique la plus accessible du marché, pensée pour un usage urbain léger et occasionnel.",
+    "considerations": [
+      "Autonomie et puissance de recharge limitées pour la route",
+      "Équipements et finitions très sommaires"
+    ]
+  },
+  {
+    "slug": "nissan-ariya",
+    "brand": "Nissan",
+    "model": "Ariya",
+    "category": "SUV",
+    "shape": "suv",
+    "priceMin": 46000,
+    "priceMax": 56000,
+    "autonomy": 530,
+    "conso": 16.5,
+    "fastKW": 130,
+    "fastTime": 30,
+    "power": 218,
+    "seats": 5,
+    "trunk": 466,
+    "drivetrain": "Traction (version e-4ORCE disponible)",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf"
+    ],
+    "hue": 216,
+    "strengths": [
+      "autonomie",
+      "confort",
+      "technologie"
+    ],
+    "forDriver": "Un SUV familial silencieux et confortable, avec une autonomie confortable pour les longs trajets.",
+    "considerations": [
+      "Prix qui grimpe vite sur les finitions hautes",
+      "Recharge rapide plus lente que certains concurrents directs"
+    ]
+  },
+  {
+    "slug": "nissan-leaf",
+    "brand": "Nissan",
+    "model": "Leaf",
+    "category": "Compacte",
+    "shape": "citadine",
+    "priceMin": 32000,
+    "priceMax": 38000,
+    "autonomy": 385,
+    "conso": 15.9,
+    "fastKW": 100,
+    "fastTime": 35,
+    "power": 150,
+    "seats": 5,
+    "trunk": 435,
+    "drivetrain": "Traction",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf",
+      "Occasion"
+    ],
+    "hue": 150,
+    "strengths": [
+      "prix",
+      "coffre"
+    ],
+    "forDriver": "Une compacte électrique éprouvée, au grand coffre pour la catégorie, idéale pour un usage quotidien fiable.",
+    "considerations": [
+      "Technologie de recharge un peu datée face aux modèles récents",
+      "Design intérieur vieillissant"
+    ]
+  },
+  {
+    "slug": "toyota-bz4x",
+    "brand": "Toyota",
+    "model": "bZ4X",
+    "category": "SUV",
+    "shape": "suv",
+    "priceMin": 45000,
+    "priceMax": 54000,
+    "autonomy": 436,
+    "conso": 17.1,
+    "fastKW": 150,
+    "fastTime": 30,
+    "power": 204,
+    "seats": 5,
+    "trunk": 452,
+    "drivetrain": "Traction (version AWD disponible)",
+    "warranty": "8 ans / 160 000 km (batterie), extensible à 10 ans",
+    "condition": [
+      "Neuf"
+    ],
+    "hue": 216,
+    "strengths": [
+      "confort",
+      "coffre"
+    ],
+    "forDriver": "Un SUV familial fiable porté par la réputation de durabilité Toyota, pour un usage polyvalent serein.",
+    "considerations": [
+      "Autonomie en retrait face aux meilleurs SUV électriques du segment",
+      "Recharge rapide correcte sans être la plus véloce"
+    ]
+  },
+  {
+    "slug": "ford-mustang-mach-e",
+    "brand": "Ford",
+    "model": "Mustang Mach-E",
+    "category": "SUV",
+    "shape": "suv",
+    "priceMin": 47000,
+    "priceMax": 60000,
+    "autonomy": 490,
+    "conso": 17.3,
+    "fastKW": 150,
+    "fastTime": 32,
+    "power": 269,
+    "seats": 5,
+    "trunk": 402,
+    "drivetrain": "Propulsion (version GT intégrale disponible)",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf",
+      "Occasion"
+    ],
+    "hue": 33,
+    "strengths": [
+      "performances",
+      "design",
+      "autonomie"
+    ],
+    "forDriver": "Un SUV électrique au tempérament sportif, pour qui veut du caractère sans sacrifier l'espace familial.",
+    "considerations": [
+      "Consommation élevée en conduite dynamique",
+      "Ergonomie tout tactile qui déroute au début"
+    ]
+  },
+  {
+    "slug": "mercedes-eqb",
+    "brand": "Mercedes",
+    "model": "EQB",
+    "category": "Familiale",
+    "shape": "wagon",
+    "priceMin": 52000,
+    "priceMax": 60000,
+    "autonomy": 420,
+    "conso": 18.4,
+    "fastKW": 100,
+    "fastTime": 32,
+    "power": 228,
+    "seats": 7,
+    "trunk": 495,
+    "drivetrain": "Traction (version Intégrale disponible)",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf"
+    ],
+    "hue": 33,
+    "strengths": [
+      "coffre",
+      "confort"
+    ],
+    "forDriver": "Le seul SUV électrique premium 7 places de cette sélection, pensé pour les familles nombreuses.",
+    "considerations": [
+      "Consommation élevée, surtout à pleine charge",
+      "Troisième rangée adaptée aux enfants uniquement"
+    ]
+  },
+  {
+    "slug": "mercedes-eqe",
+    "brand": "Mercedes",
+    "model": "EQE",
+    "category": "Premium",
+    "shape": "sport",
+    "priceMin": 75000,
+    "priceMax": 90000,
+    "autonomy": 580,
+    "conso": 16.9,
+    "fastKW": 170,
+    "fastTime": 26,
+    "power": 292,
+    "seats": 5,
+    "trunk": 430,
+    "drivetrain": "Traction (version Intégrale disponible)",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf",
+      "Occasion"
+    ],
+    "hue": 216,
+    "strengths": [
+      "autonomie",
+      "confort",
+      "technologie"
+    ],
+    "forDriver": "Une berline premium taillée pour les grands rouleurs qui veulent du confort et une autonomie hors norme.",
+    "considerations": [
+      "Budget conséquent",
+      "Gabarit imposant en ville"
+    ]
+  },
+  {
+    "slug": "bmw-i4",
+    "brand": "BMW",
+    "model": "i4",
+    "category": "Berline",
+    "shape": "berline",
+    "priceMin": 58000,
+    "priceMax": 70000,
+    "autonomy": 520,
+    "conso": 17,
+    "fastKW": 205,
+    "fastTime": 24,
+    "power": 340,
+    "seats": 5,
+    "trunk": 470,
+    "drivetrain": "Propulsion (version M50 intégrale disponible)",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf",
+      "Occasion"
+    ],
+    "hue": 216,
+    "strengths": [
+      "performances",
+      "autonomie",
+      "recharge rapide"
+    ],
+    "forDriver": "Une berline électrique dynamique, pour qui veut allier plaisir de conduite et longs trajets rapides.",
+    "considerations": [
+      "Prix élevé en finitions hautes",
+      "Coffre en retrait face aux SUV équivalents"
+    ]
+  },
+  {
+    "slug": "bmw-ix",
+    "brand": "BMW",
+    "model": "iX",
+    "category": "Premium",
+    "shape": "suv",
+    "priceMin": 78000,
+    "priceMax": 95000,
+    "autonomy": 600,
+    "conso": 19.8,
+    "fastKW": 195,
+    "fastTime": 26,
+    "power": 326,
+    "seats": 5,
+    "trunk": 500,
+    "drivetrain": "Intégrale",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf"
+    ],
+    "hue": 33,
+    "strengths": [
+      "autonomie",
+      "confort",
+      "technologie"
+    ],
+    "forDriver": "Le grand SUV premium de la sélection, pour les longs trajets en famille avec un maximum de confort.",
+    "considerations": [
+      "Budget très élevé",
+      "Design qui ne fait pas l'unanimité"
+    ]
+  },
+  {
+    "slug": "audi-q6-etron",
+    "brand": "Audi",
+    "model": "Q6 e-tron",
+    "category": "Premium",
+    "shape": "suv",
+    "priceMin": 64000,
+    "priceMax": 78000,
+    "autonomy": 580,
+    "conso": 18.2,
+    "fastKW": 270,
+    "fastTime": 21,
+    "power": 326,
+    "seats": 5,
+    "trunk": 526,
+    "drivetrain": "Traction (version quattro disponible)",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf"
+    ],
+    "hue": 216,
+    "strengths": [
+      "recharge rapide",
+      "autonomie",
+      "coffre"
+    ],
+    "forDriver": "Un SUV premium récent qui combine grande autonomie et recharge très rapide pour les longs trajets.",
+    "considerations": [
+      "Budget élevé sur les finitions équipées",
+      "Poids important en usage urbain"
+    ]
+  },
+  {
+    "slug": "polestar-2",
+    "brand": "Polestar",
+    "model": "2",
+    "category": "Berline",
+    "shape": "berline",
+    "priceMin": 50000,
+    "priceMax": 62000,
+    "autonomy": 540,
+    "conso": 16.6,
+    "fastKW": 205,
+    "fastTime": 28,
+    "power": 299,
+    "seats": 5,
+    "trunk": 405,
+    "drivetrain": "Traction (version bi-moteur disponible)",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf",
+      "Occasion"
+    ],
+    "hue": 150,
+    "strengths": [
+      "design",
+      "performances",
+      "technologie"
+    ],
+    "forDriver": "Une berline scandinave épurée pour qui cherche une alternative design aux références allemandes.",
+    "considerations": [
+      "Réseau après-vente moins dense que les généralistes",
+      "Coffre arrière moins pratique qu'un hayon classique sur certaines versions"
+    ]
+  },
+  {
+    "slug": "smart-1",
+    "brand": "Smart",
+    "model": "#1",
+    "category": "SUV",
+    "shape": "suv",
+    "priceMin": 39000,
+    "priceMax": 46000,
+    "autonomy": 420,
+    "conso": 16.8,
+    "fastKW": 150,
+    "fastTime": 27,
+    "power": 200,
+    "seats": 5,
+    "trunk": 411,
+    "drivetrain": "Propulsion (version Brabus intégrale disponible)",
+    "warranty": "8 ans / 160 000 km (batterie)",
+    "condition": [
+      "Neuf"
+    ],
+    "hue": 150,
+    "strengths": [
+      "design",
+      "technologie"
+    ],
+    "forDriver": "Un petit SUV électrique au design soigné, pour un usage urbain et périurbain avec du style.",
+    "considerations": [
+      "Marque encore en phase de développement de son réseau en France",
+      "Habitabilité arrière moyenne pour la catégorie"
+    ]
+  }
+]
