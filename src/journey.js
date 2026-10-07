@@ -1,0 +1,18 @@
+import {useEffect,useRef,useState} from 'react';
+import {defaults} from './engine';
+import {passportDefaults,pilotConfig} from './pilot-engine';
+export const buyerDefaults={...defaults,...passportDefaults,postcode:'',monthly:0,radius:20,horizon:'exploring',payment:'undecided',tradeIn:'undecided',notes:''};
+const emptyGeo=()=>({place:{...pilotConfig,name:'Zone pilote · Les Ulis',approximate:true,pilotDefault:true},fuel:null,dealers:null,quote:null});
+export function useJourney(user,ready,me){
+ const [buyer,setBuyer]=useState(buyerDefaults),[drafts,setDrafts]=useState({}),[geoData,setGeoData]=useState(emptyGeo),[owner,setOwner]=useState(null);
+ const ownerRef=useRef(null);const key='volteo-journey-v1:'+(user?.id||'guest');
+ useEffect(()=>{if(!ready||ownerRef.current===key)return;let stored=null,guest=null;try{stored=JSON.parse(sessionStorage.getItem(key)||'null');if(user&&!me.project&&!me.profile&&user.account_type!=='pro'&&!['dealer','admin'].includes(user.role))guest=JSON.parse(sessionStorage.getItem('volteo-journey-v1:guest')||'null');}catch{}const next=stored||guest;setBuyer({...buyerDefaults,postcode:user?.postcode||'',...me.profile,...me.project,...next?.buyer});setDrafts(next?.drafts||{});setGeoData({...emptyGeo(),place:next?.place||(!next?.buyer?.postcode&&!user?.postcode?emptyGeo().place:null)});ownerRef.current=key;setOwner(key);if(user){try{sessionStorage.setItem(key,JSON.stringify({buyer:{...buyerDefaults,postcode:user.postcode||'',...me.profile,...me.project,...next?.buyer},drafts:next?.drafts||{},place:next?.place||null}));sessionStorage.removeItem('volteo-journey-v1:guest');}catch{}}},[ready,user?.id,key]);
+ useEffect(()=>{if(!ready||owner!==key)return;try{sessionStorage.setItem(key,JSON.stringify({buyer,drafts,place:geoData.place?.approximate?geoData.place:null}));}catch{}},[buyer,drafts,geoData.place,ready,owner,key]);
+ function clearQuote(){setDrafts(old=>old.simulator?.fuelSource?{...old,simulator:{...old.simulator,fuel:1.85,fuelSource:''}}:old);}
+ function updateBuyer(patch){if(patch.charging!==undefined&&patch.charging!==buyer.charging&&patch.chargeRate===undefined)patch={...patch,chargeRate:patch.charging==='public'?(drafts.simulator?.publicRate??.6):(drafts.simulator?.homeRate??.25)};if(patch.chargeRate!==undefined)setDrafts(old=>({...old,simulator:{...old.simulator,[(patch.charging||buyer.charging)==='public'?'publicRate':'homeRate']:patch.chargeRate}}));if(patch.postcode!==undefined&&patch.postcode!==buyer.postcode){setGeoData(emptyGeo());clearQuote();}if(patch.radius!==undefined&&patch.radius!==buyer.radius)setGeoData(old=>({...old,fuel:null,dealers:null}));setBuyer(old=>({...old,...patch}));if(patch.charging!==undefined&&patch.charging!==buyer.charging)setDrafts(old=>old.simulator?{...old,simulator:{...old.simulator,homeShare:patch.charging==='public'?0:80}}:old);}
+ function selectPlace(place){if(!geoData.place||place.lat!==geoData.place.lat||place.lon!==geoData.place.lon){setGeoData({...emptyGeo(),place});clearQuote();}else setGeoData(old=>({...old,place}));}
+ function setDraft(name,value){setDrafts(old=>({...old,[name]:typeof value==='function'?value(old[name]):value}));}
+ function resetJourney(){try{sessionStorage.removeItem(key);sessionStorage.removeItem('volteo-journey-v1:guest');}catch{}setBuyer(buyerDefaults);setDrafts({});setGeoData(emptyGeo());}
+ return {buyer,updateBuyer,selectPlace,drafts,setDraft,geoData,setGeoData,resetJourney,journeyReady:ready&&owner===key};
+}
+export function useFormDraft(a,name,initial){const value=a.drafts[name]??initial;return [value,next=>a.setDraft(name,typeof next==='function'?next(value):next)];}

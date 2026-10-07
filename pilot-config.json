@@ -1,0 +1,1 @@
+{"name":"Pilote Les Ulis","city":"Les Ulis","postcode":"91940","code":"91692","lat":48.6817,"lon":2.1864,"radius":20,"radii":[10,15,20,25,30,50],"source":"https://geo.api.gouv.fr/communes/91692?fields=nom,code,centre","centerChecked":"2026-10-04"}

@@ -1,0 +1,30 @@
+{
+  "name": "volteo-v4",
+  "version": "4.9.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview",
+    "api": "python3 server/app.py",
+    "test": "node --test tests/*.test.js && npm run test:cloud",
+    "test:cloud": "node tests/cloud-local.mjs",
+    "test:legacy": "node tests/legacy-python.mjs",
+    "serve": "python3 server/app.py --serve"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "2.117.2",
+    "leaflet": "1.9.4",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-router-dom": "7.18.4"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.3.14",
+    "vite": "8.3.2"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  }
+}

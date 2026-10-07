@@ -1,0 +1,150 @@
+[
+  {
+    "id": 1,
+    "name": "Élec'Auto Paris Est",
+    "brands": [
+      "Peugeot",
+      "Renault"
+    ],
+    "city": "Paris",
+    "dept": "75",
+    "address": "12 avenue de la République, 75011 Paris",
+    "phone": "01 42 00 00 00",
+    "site": "elecauto-paris.fr",
+    "essai": true,
+    "borne": true,
+    "partenaire": true
+  },
+  {
+    "id": 2,
+    "name": "Ouest EV Nantes",
+    "brands": [
+      "Volkswagen",
+      "Škoda"
+    ],
+    "city": "Nantes",
+    "dept": "44",
+    "address": "8 rue des Saveurs, 44000 Nantes",
+    "phone": "02 40 00 00 00",
+    "site": "ouest-ev.fr",
+    "essai": true,
+    "borne": true,
+    "partenaire": true
+  },
+  {
+    "id": 3,
+    "name": "Tesla Centre Lyon",
+    "brands": [
+      "Tesla"
+    ],
+    "city": "Lyon",
+    "dept": "69",
+    "address": "45 cours Lafayette, 69003 Lyon",
+    "phone": "04 78 00 00 00",
+    "site": "tesla.com",
+    "essai": true,
+    "borne": false,
+    "partenaire": false
+  },
+  {
+    "id": 4,
+    "name": "Sud Mobilité Électrique",
+    "brands": [
+      "Hyundai",
+      "Kia"
+    ],
+    "city": "Marseille",
+    "dept": "13",
+    "address": "22 boulevard Michelet, 13008 Marseille",
+    "phone": "04 91 00 00 00",
+    "site": "sud-mobilite-elec.fr",
+    "essai": true,
+    "borne": true,
+    "partenaire": true
+  },
+  {
+    "id": 5,
+    "name": "Premium EV Bordeaux",
+    "brands": [
+      "BMW",
+      "Porsche"
+    ],
+    "city": "Bordeaux",
+    "dept": "33",
+    "address": "5 quai des Chartrons, 33000 Bordeaux",
+    "phone": "05 56 00 00 00",
+    "site": "premium-ev-bdx.fr",
+    "essai": true,
+    "borne": true,
+    "partenaire": true
+  },
+  {
+    "id": 6,
+    "name": "Nord Auto Verte",
+    "brands": [
+      "Renault",
+      "Fiat"
+    ],
+    "city": "Lille",
+    "dept": "59",
+    "address": "17 rue Faidherbe, 59800 Lille",
+    "phone": "03 20 00 00 00",
+    "site": "nordautoverte.fr",
+    "essai": true,
+    "borne": false,
+    "partenaire": true
+  },
+  {
+    "id": 7,
+    "name": "Alsace Électrique",
+    "brands": [
+      "Volkswagen",
+      "Škoda",
+      "BMW"
+    ],
+    "city": "Strasbourg",
+    "dept": "67",
+    "address": "3 route de Colmar, 67000 Strasbourg",
+    "phone": "03 88 00 00 00",
+    "site": "alsace-electrique.fr",
+    "essai": false,
+    "borne": true,
+    "partenaire": false
+  },
+  {
+    "id": 8,
+    "name": "Occitanie EV Toulouse",
+    "brands": [
+      "Peugeot",
+      "Hyundai"
+    ],
+    "city": "Toulouse",
+    "dept": "31",
+    "address": "9 allées Jean Jaurès, 31000 Toulouse",
+    "phone": "05 61 00 00 00",
+    "site": "occitanie-ev.fr",
+    "essai": true,
+    "borne": true,
+    "partenaire": true
+  },
+  {
+    "id": 9,
+    "name": "Concession Démo (compte test)",
+    "brands": [
+      "Peugeot",
+      "Renault",
+      "Tesla",
+      "BMW",
+      "Škoda"
+    ],
+    "city": "Paris",
+    "dept": "75",
+    "address": "Compte de démonstration VOLTÉO",
+    "phone": "01 00 00 00 00",
+    "site": "",
+    "essai": true,
+    "borne": true,
+    "partenaire": true,
+    "demoCode": "DEMO-PRO"
+  }
+]

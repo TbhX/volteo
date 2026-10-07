@@ -1,0 +1,5 @@
+project_id = "volteo"
+
+[functions.volteo-services]
+# Public geographic lookups; account deletion validates JWT, live session and password in the handler.
+verify_jwt = false
