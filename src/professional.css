@@ -1,0 +1,68 @@
+/* Professional workspace: operational navigation and a quieter blue identity. */
+.professional-workspace{--green:#8bbcff;--cyan:#9cddf1;--glow:rgba(118,170,255,.10);--rail:260px;background:#0b1220}
+.professional-workspace .workspace-sidebar{background:linear-gradient(170deg,#111e34,#0b1322);border-color:#25344b;padding-top:32px}
+.professional-workspace .workspace-brand{color:#f0f5ff;letter-spacing:1px}
+.professional-workspace .workspace-brand small{font-size:9px;color:#96b7e4}
+.professional-workspace .workspace-nav h2{color:#7891b5;letter-spacing:2px}
+.professional-workspace .workspace-link{color:#b3c3db;border-radius:7px;min-height:48px}
+.professional-workspace .workspace-link.selected{background:#1c3558;color:#e3efff;border-color:#325683;box-shadow:inset 3px 0 #8bbcff}
+.professional-workspace .workspace-main{background:var(--bg);padding-inline:28px}
+.professional-workspace .workspace-toolbar{min-height:92px}
+.professional-workspace .workspace-content{border-radius:12px}
+.professional-workspace .workspace-demo{display:none}
+.professional-workspace .dashboard-heading h1{font-size:clamp(28px,3vw,44px);letter-spacing:-1.4px}
+.professional-workspace .dashboard-tabs{border-bottom:1px solid var(--line);padding-bottom:14px}
+.professional-workspace .dashboard-tabs button{border-radius:7px}
+.professional-workspace .dashboard-kpi{border-radius:9px}
+.pro-establishment{padding:16px 12px;border:1px solid #293b55;border-radius:9px;background:#132039;color:#eef4ff;margin-bottom:8px}
+.pro-establishment strong,.pro-establishment small{display:block;overflow-wrap:anywhere}
+.pro-establishment strong{font-size:12px;margin:8px 0}
+.pro-establishment small{color:#99afcf;font-size:10px}
+.professional-workspace.is-compact .pro-establishment{display:none}
+.workspace-actions .view-switch{display:flex;gap:8px;align-items:center;border-color:color-mix(in srgb,var(--cyan) 50%,var(--line));font-size:11px;white-space:nowrap}
+.buyer-preview-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;border:1px solid var(--line);border-left:3px solid var(--cyan);padding:10px 14px;border-radius:8px;margin-bottom:10px;font-size:11px;flex:none}
+.buyer-preview-bar span{color:var(--muted)}
+.dealer-overview{display:grid;gap:22px}
+.dealer-focus{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(220px,1fr);gap:28px;border:1px solid #385882;border-radius:12px;padding:28px;background:linear-gradient(115deg,#162d4d,#152136);color:#edf5ff}
+.dealer-focus h2{font-size:clamp(24px,2.5vw,34px);max-width:650px;line-height:1.14;margin:12px 0;letter-spacing:-.7px}
+.dealer-focus p{color:#b6cbe8;font-size:14px}
+.dealer-focus .eyebrow{color:#97c2fc}
+.dealer-focus .button{background:#a9cdff;color:#10233d;border-color:#a9cdff;margin-top:12px}
+.dealer-focus-note{align-self:center;border-left:1px solid #405674;padding-left:25px}
+.dealer-focus-note>span{font-size:9px;letter-spacing:2px;color:#acc9ef}
+.dealer-focus-note small{font-size:11px;color:#8ea9ca}
+.dealer-work-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:22px}
+.dealer-work-grid .panel{margin:0;min-width:0;padding:24px}
+.dealer-section-title{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap}
+.dealer-section-title h2{margin:8px 0;font-size:23px}
+.dealer-section-title>a,.dealer-section-title>button{font-size:11px}
+.dealer-empty{padding:25px 0;color:var(--muted);font-size:13px}
+.dealer-empty b{color:var(--text);font-size:15px}
+.dealer-empty p{max-width:390px}
+.dealer-stock-counts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:24px 0}
+.dealer-stock-counts strong{display:block;font-size:32px;color:var(--cyan)}
+.dealer-stock-counts span{font-size:11px;color:var(--muted);line-height:1.5;display:block}
+.dealer-client-tools small{display:block;color:var(--muted);margin-top:14px}
+.dealer-client-tools>.text-button{display:block;margin-top:24px;text-align:left}
+.dealer-alert{display:block;padding:12px;border:1px solid var(--line);border-radius:6px;font-size:12px;color:var(--cyan)}
+.professional-workspace .workspace-footer>span{flex-wrap:wrap}
+html[data-theme=light] .professional-workspace .workspace-sidebar{--muted:#a5b9d6;--text:#eff5ff}
+@media(max-width:1200px){.professional-workspace{--rail:220px}.professional-workspace .workspace-main{padding-inline:16px}.dealer-work-grid{grid-template-columns:1fr}.workspace:has(.view-switch) .workspace-next-action{display:none}}
+@media(max-width:900px){.professional-workspace .workspace-main{padding:0 8px 8px}.professional-workspace .workspace-toolbar{min-height:76px}.dealer-focus{grid-template-columns:1fr;padding:22px;gap:20px}.dealer-focus-note{padding-left:0;border-left:0;border-top:1px solid #405674;padding-top:16px}.workspace:has(.view-switch) .workspace-toolbar{flex-wrap:wrap;gap:8px}.workspace:has(.view-switch) .workspace-actions{margin-left:auto}.workspace-actions .view-switch{font-size:10px;min-height:40px}.buyer-preview-bar{gap:4px;font-size:10px}.buyer-preview-bar span{line-height:1.4}.dealer-work-grid .panel{padding:18px}.professional-workspace .dashboard-row{flex-wrap:wrap;gap:10px}}
+@media(max-width:480px){.workspace:has(.view-switch) .workspace-heading{flex:1;min-width:160px}.workspace:has(.view-switch) .workspace-actions{flex-wrap:wrap;justify-content:flex-end}.dealer-stock-counts{gap:8px}.dealer-stock-counts strong{font-size:28px}.dealer-focus h2{font-size:26px}}
+@media print{.buyer-preview-bar,.view-switch{display:none}.dealer-focus{background:white;color:black}.dealer-focus p{color:black}}
+.workspace:has(.view-switch) .workspace-toolbar{height:auto;position:relative}
+@media(max-width:650px){
+ .professional-workspace .dashboard-heading{gap:12px;margin-bottom:14px}
+ .professional-workspace .dashboard-heading h1{font-size:27px;line-height:1.14}
+ .professional-workspace .dashboard-heading p{font-size:13px;margin:8px 0;line-height:1.5}
+ .professional-workspace .dashboard-heading>.dashboard-actions{display:grid;grid-template-columns:auto auto;width:100%;gap:8px}
+ .professional-workspace .dashboard-heading button{min-height:40px;padding:8px;font-size:10px}
+ .professional-workspace .dashboard-tabs{gap:6px;margin:12px 0;padding-bottom:12px}
+ .professional-workspace .dashboard-tabs button{min-width:0;padding:10px 6px;font-size:10px;min-height:42px}
+ .professional-workspace .dashboard-filters{margin:10px 0}
+ .professional-workspace .dashboard-filters .checkbox{font-size:10px;min-height:32px}
+ .professional-workspace .dashboard-stamp{font-size:9px;margin:10px 0}
+ .professional-workspace .workspace-footer{padding:10px;font-size:9px;gap:8px}
+ .professional-workspace .workspace-footer button{font-size:10px;padding:0;min-height:28px}
+}

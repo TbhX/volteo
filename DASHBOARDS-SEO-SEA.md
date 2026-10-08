@@ -98,3 +98,13 @@ Les tests couvrent les filtres, limites de période, relances, confidentialité 
 Migration appliquée sur Supabase le 8 octobre 2026 ; version locale alignée sur la version distante `20261008164446`. Aucun code non numérique détecté après correction. Le parcours cloud teste également un code commençant par plusieurs zéros.
 
 Le contrôle Supabase signale toujours la protection contre les mots de passe compromis désactivée dans Auth. Configuration à activer selon le forfait du projet : https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection
+
+## Interface professionnelle et vue acheteur
+
+Les comptes professionnels disposent d’une navigation dédiée : accueil opérationnel, demandes clients, agenda et relances, stock et offres, performance, établissement et sécurité. L’accueil concessionnaire met les actions à traiter avant les statistiques. Les données proviennent des API existantes ; aucun chiffre ou dossier fictif n’est injecté dans les comptes réels.
+
+Le bouton « Vue acheteur » ouvre les outils publics avec un bandeau de démonstration. « Retour espace pro » retrouve la dernière rubrique professionnelle, y compris l’onglet agenda. La dernière page de chaque vue est mémorisée dans la session du navigateur, par compte. Les critères de simulation et la sélection de comparaison sont conservés lors de la bascule.
+
+La vue acheteur permet d’explorer le diagnostic, le projet, le passeport, le comparateur et le budget. Elle ne transforme pas le compte pro en acheteur : les enregistrements de profils, favoris et demandes restent indisponibles. Les routes professionnelles conservent leurs contrôles d’accès ; la bascule ne modifie aucun rôle en base. Les comptes pros non validés restent sur leur page d’activation.
+
+Contrôles réalisés : navigation concessionnaire, aller-retour entre les vues, restauration de l’onglet et de la sélection, rechargement, formulaire de passeport sans écriture en aperçu, absence de débordement et défilement intérieur à 1440, 1024 et 390 pixels. Tests de données et règles de navigation : `node --test tests/professional-view.test.js tests/dashboard.test.js`.
