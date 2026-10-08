@@ -33,3 +33,32 @@
  .screen-pages{min-width:100%}
  .table-scroll{overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scroll-behavior:smooth}
 }
+
+/* Paged desktop guardrails. A CSS grid is kept in the next column when its
+   first card cannot fit below the heading; compacting only the media/card
+   chrome keeps the actual vehicle visual in the first viewport. */
+@media(min-width:901px){
+ .is-paged .catalog-page .card .vehicle-photo{height:clamp(92px,8vw,140px)!important;min-height:92px!important;aspect-ratio:auto!important}
+ .is-paged .catalog-page .card .vehicle-photo img{height:100%!important;width:100%!important;object-fit:contain!important}
+ .is-paged .catalog-page .card-body{padding:6px 10px!important}
+ .is-paged .catalog-page .card .match-badge{margin:4px 0 5px;padding:4px 7px}
+ .is-paged .catalog-page .card .match-badge .match-score{font-size:14px}
+ .is-paged .catalog-page .card .match-copy{gap:2px}
+ .is-paged .catalog-page .card .match-copy>small{font-size:6px;letter-spacing:.7px}
+ .is-paged .catalog-page .card .match-copy>strong{font-size:8px}
+ .is-paged .catalog-page .card .specs{margin:3px 0!important;padding:0!important}
+ .is-paged .catalog-page .card .actions{margin-top:5px!important;padding-top:5px!important}
+ .is-paged .compare-view .compare-model-photo{height:clamp(150px,11vw,205px)!important;min-height:150px!important;aspect-ratio:auto!important}
+ .is-paged .compare-view .compare-model-photo img{height:100%!important;width:100%!important;object-fit:contain!important}
+}
+@media(min-width:1440px){.is-paged .catalog-page .card .vehicle-photo{height:140px!important}.is-paged .compare-view .compare-model-photo{height:200px!important}}
+@media(min-width:1101px) and (max-width:1439px){.is-paged .catalog-page .card .vehicle-photo{height:clamp(110px,9vw,132px)!important}.is-paged .compare-view .compare-model-photo{height:175px!important}}
+@media(min-width:901px) and (max-width:1100px){.is-paged .catalog-page .card .vehicle-photo{height:108px!important}.is-paged .compare-view .compare-model-photo{height:155px!important}}
+
+/* The catalogue is a long, scan-first list. Let the central workspace scroll
+   internally instead of moving the whole grid to an invisible CSS column on
+   wide or short screens. The comparator keeps its intentional page steps. */
+@media(min-width:901px){
+ .is-paged .screen-viewport:has(.catalog-page){overflow-y:auto!important;overflow-x:hidden!important;scroll-behavior:smooth}
+ .is-paged .screen-pages:has(.catalog-page){display:block!important;width:100%!important;min-height:100%;height:auto!important;column-width:auto!important;column-count:auto!important;column-gap:0!important}
+}

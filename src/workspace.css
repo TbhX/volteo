@@ -6,6 +6,8 @@
 @media print{.workspace{height:auto;display:block;overflow:visible}.workspace-sidebar,.workspace-toolbar,.workspace-main>.context-bar,.workspace-footer{display:none}.workspace-main{display:block;padding:0}.workspace-content{overflow:visible;border:0;height:auto}.site-shell:has(.workspace){height:auto;overflow:visible}}
 /* Isolate the persistent navigation from legacy global nav rules. */
 .workspace-nav{display:block!important;position:static;inset:auto;align-items:initial;justify-content:initial;gap:0;width:100%;height:auto;margin:0;padding:0;border:0;box-shadow:none;background:transparent}.workspace-nav section{display:block;width:100%}.workspace-nav .workspace-link{height:auto;white-space:nowrap}.workspace-nav .workspace-link::after{display:none}.workspace-drawer .workspace-nav{flex:1;min-height:0;overflow:auto}.workspace-sidebar{overflow:hidden}.workspace-drawer .workspace-brand,.workspace-drawer .workspace-side-bottom{flex:none}
+@media(min-width:901px){.site-shell:has(.workspace)>.compare-dock{right:42px;left:auto;bottom:132px;transform:none}}
+@media(min-width:901px) and (max-height:820px){.site-shell:has(.workspace)>.compare-dock{bottom:105px}}
 
 body:has(.workspace){overflow:hidden;padding-bottom:0}
 @media print{body:has(.workspace){overflow:visible}}
