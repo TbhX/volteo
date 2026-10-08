@@ -11,3 +11,6 @@
 
 body:has(.workspace){overflow:hidden;padding-bottom:0}
 @media print{body:has(.workspace){overflow:visible}}
+
+.workspace-actions .workspace-logout{display:inline-flex;align-items:center;justify-content:center;gap:8px;flex-shrink:0;font-size:11px;white-space:nowrap}.workspace-logout:disabled{opacity:.6;cursor:wait}
+@media(max-width:1200px){.workspace-actions .workspace-logout span{display:none}}
