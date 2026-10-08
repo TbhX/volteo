@@ -73,7 +73,7 @@ export function scoreVehicle(v,input={}){
   :`${name} peut convenir, mais ${rangeText} et ${budgetText}. ${chargeText} avant de réserver un essai.`;
  const reasons=[
   autonomyScore>=88?`Autonomie cohérente avec vos ${daily} km quotidiens`:`Autonomie à vérifier pour vos ${daily} km quotidiens`,
-  budgetScore>=85?`Prix indicatif dans votre budget de ${euros(budget)}`:`Prix indicatif au-dessus de votre budget de ${euros(budget)}`,
+  price<=budget?`Prix indicatif dans votre budget de ${euros(budget)}`:`Prix indicatif au-dessus de votre budget de ${euros(budget)}`,
   rechargeScore>=82?(p.charging==='public'||p.usage==='highway'?'Recharge rapide adaptée aux longs trajets':'Recharge adaptée à votre rythme'):'Recharge rapide à intégrer dans vos pauses',
   efficiencyScore>=82?'Consommation bien maîtrisée pour vos kilomètres':'Consommation à comparer dans le coût total',
   vehicleSeats>=seats?`${vehicleSeats} places, comme demandé`:`Seulement ${vehicleSeats} places pour ${seats} nécessaires`
@@ -81,12 +81,31 @@ export function scoreVehicle(v,input={}){
  return {score,label,summary,criteria,requiredRange,weights:normalized,reasons};
 }
 
+// Eligibility is separate from scoring: no ranking or numeric score in discovery.
+export function assessVehicle(v,p={}){
+ const valid=['budget','daily','km','seats'].every(k=>p[k]!==''&&p[k]!=null&&Number.isFinite(Number(p[k])))
+  &&p.budget>=1000&&p.daily>=0&&p.km>=0&&p.seats>=1
+  &&['home','work','public'].includes(p.charging)&&['city','mixed','highway'].includes(p.usage)&&!!p.category;
+ const reasons=[];
+ if(!valid)return {eligible:false,reasons:['Complétez vos critères avant l’analyse.']};
+ if(v.priceMin>p.budget)reasons.push('Prix indicatif supérieur au budget.');
+ if(v.seats<p.seats)reasons.push('Nombre de places insuffisant.');
+ if(p.category!=='Toutes'&&v.category!==p.category)reasons.push('Format différent de votre choix.');
+ if(!Number.isFinite(v.autonomy)||v.autonomy*.7<p.daily)reasons.push('Trajet quotidien supérieur à l’autonomie retenue avec une marge de 30 %.');
+ const eligible=reasons.length===0;
+ if(eligible)reasons.push('Budget, places et format compatibles.', 'Trajet quotidien couvert avec une réduction supposée de 30 % du WLTP ; autonomie réelle à vérifier.');
+ reasons.push(p.charging==='public'?'Recharge publique : vérifiez les bornes, les tarifs et le temps de charge.':'Recharge habituelle : vérifiez l’accès et la puissance de votre installation.');
+ if(p.usage==='highway')reasons.push('Autoroute : vérifiez les pauses et l’autonomie à vitesse soutenue.');
+ return {eligible,reasons};
+}
 export function recommend(vehicles,p={}){
- const profile=profileFor(p);
- return vehicles.filter(v=>v.priceMin<=profile.budget && v.seats>=profile.seats && (profile.category==='Toutes'||v.category===profile.category)).map(v=>{
-  const match=scoreVehicle(v,profile);
-  return {...v,...match};
- }).sort((a,b)=>b.score-a.score).slice(0,3);
+ return vehicles.map(v=>({...v,...assessVehicle(v,p)})).filter(v=>v.eligible);
+}
+export function comparisonSelection(vehicles,selected,profile,confirmed){
+ return selected.map(slug=>vehicles.find(v=>v.slug===slug)).filter(Boolean).map(v=>{
+  const assessment=assessVehicle(v,profile);
+  return {...v,assessment,match:confirmed&&assessment.eligible?scoreVehicle(v,profile):null};
+ });
 }
 export const tcoDefaults={km:15000,years:5,fuel:1.85,liters:6,homeRate:.25,publicRate:.6,homeShare:80,electricMaintenance:350,thermalMaintenance:700,electricInsurance:700,thermalInsurance:650,thermalValue:15000,thermalResale:6000,electricResale:18000,deposit:5000,months:60,apr:4,installation:1200};
 export function tco(v,p){
