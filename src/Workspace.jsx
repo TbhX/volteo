@@ -19,10 +19,10 @@ export default function Workspace({app:a,theme,setTheme,children}){
  }
  const pro=a.isPro,manage=['dealer','admin'].includes(a.user?.role);
  const groups=pro?[
-  ['MON ACTIVITÉ',[['/','Vue d’ensemble','home'],['/professionnel','Demandes et essais','passport'],...(manage?[['/stock','Mes offres','offers']]:[]),['/compte','Mon établissement','user']]],
+  ['MON ACTIVITÉ',[[a.user?.role==='admin'?'/admin':manage?'/tableau-de-bord':'/compte',manage?'Tableau de bord':'Vue d’ensemble','home'],['/professionnel','Demandes et essais','passport'],...(manage?[['/stock','Mes offres','offers']]:[]),['/compte','Mon établissement','user']]],
   ['OUTILS',explore.slice(1).concat([['/simulateur','Calcul de budget','wallet'],['/autour-de-moi','Carte locale','map']])]
  ]:[['DÉCOUVRIR',explore],['MON PROJET',project],['À PROXIMITÉ',local]];
- if(a.user?.role==='admin')groups.push(['GESTION',[['/admin','Administration','shield']]]);
+ if(a.user?.role==='admin')groups.push(['GESTION',[['/admin/gestion','Comptes et partenaires','shield']]]);
  const [section,setSection]=useState('');
  const sectionName=section||groups[0][0];
  const current=groups.flatMap(x=>x[1]).find(x=>x[0]===loc.pathname)?.[1]||(loc.pathname.startsWith('/vehicules/')?'Fiche véhicule':'Votre espace');

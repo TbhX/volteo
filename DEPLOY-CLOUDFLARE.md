@@ -30,7 +30,7 @@ Paramètres du projet :
 | Node.js version | `20` ou plus récent |
 |
 
-Le fichier `public/_redirects` assure les routes React après un rafraîchissement direct.
+Le build génère un HTML par route connue, les pages SEO, le sitemap et une page 404. Lire **DASHBOARDS-SEO-SEA.md** pour les variables de domaine et de mesure.
 
 ## 3. Variables Cloudflare
 
@@ -62,7 +62,7 @@ Tester ensuite :
 - le simulateur et la conservation des données ;
 - la carte bornes/concessions ;
 - le formulaire de contact ;
-- l’affichage desktop sans scroll vertical ;
+- l’affichage desktop avec défilement uniquement dans le bloc de contenu ;
 - l’affichage mobile.
 
 Le catalogue véhicule contient encore des données de démonstration ; les flux temps réel déjà raccordés concernent les bornes, carburants et offres.

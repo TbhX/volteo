@@ -45,7 +45,11 @@ begin
  perform pg_temp.check(r->>'ok'='true','appointment: '||r::text);
  r=public.volteo_api('/leads/'||lid,'PATCH',jsonb_build_object('status','Contacté','expected_updated',lead->'updated'));perform pg_temp.check(r->>'status'='409','optimistic conflict');
  perform set_config('request.jwt.claims',jsonb_build_object('sub',buyer,'session_id',buyer,'role','authenticated')::text,true);
- code=public.volteo_api('/leads')->0->>'attendance_code';perform pg_temp.check(length(code)=6,'buyer sees attendance code');
+ code=public.volteo_api('/leads')->0->>'attendance_code';perform pg_temp.check(code ~ '^[0-9]{6}$','buyer sees six numeric digits');
+ -- Exercise a leading-zero code deterministically through the public journey.
+ update volteo_private.lead_details set attendance_code='000042' where lead_id=lid;
+ code=public.volteo_api('/leads')->0->>'attendance_code';
+ perform pg_temp.check(code='000042','leading zeros preserved for buyer');
  perform set_config('request.jwt.claims',jsonb_build_object('sub',dealer,'session_id',dealer,'role','authenticated')::text,true);
  r=public.volteo_api('/pilot/leads/'||lid||'/attendance','POST',jsonb_build_object('code',code));perform pg_temp.check(r->>'ok'='true','attendance: '||r::text);
  perform set_config('request.jwt.claims',jsonb_build_object('sub',buyer,'session_id',buyer,'role','authenticated')::text,true);
