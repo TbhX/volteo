@@ -14,3 +14,12 @@ body:has(.workspace){overflow:hidden;padding-bottom:0}
 
 .workspace-actions .workspace-logout{display:inline-flex;align-items:center;justify-content:center;gap:8px;flex-shrink:0;font-size:11px;white-space:nowrap}.workspace-logout:disabled{opacity:.6;cursor:wait}
 @media(max-width:1200px){.workspace-actions .workspace-logout span{display:none}}
+
+/* Preserve the complete wide shot, including wheels and body, at every size. */
+.workspace .hero .film-visual{display:block;align-self:center;width:100%;padding:0;min-height:0!important;max-height:none!important;aspect-ratio:auto;background:#03090d}
+.workspace .hero .hero-film-still{position:static;display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;object-position:center;transform:none}
+.workspace .hero .film-caption{position:static;inset:auto;padding:14px 18px;border-top:1px solid #213237;background:#081117;font-size:9px;letter-spacing:1.2px}
+.workspace .hero .film-caption span{line-height:1.5}
+.workspace .hero .film-play{flex:none;min-height:40px;min-width:40px}
+@media(max-width:650px){.workspace .hero .film-caption{padding:12px;font-size:8px;letter-spacing:.8px}}
+.workspace .hero .film-visual{break-inside:avoid;page-break-inside:avoid}

@@ -5,7 +5,7 @@ import {Icon} from './Experience';
 import './screen-deck.css';
 const positions=new Map();
 // Only guided journeys use horizontal pages; consultation pages scroll inside the workspace.
-const pagedRoutes=new Set(['/', '/diagnostic', '/projet']);
+const pagedRoutes=new Set(['/diagnostic', '/projet']);
 export default function ScreenDeck({children}){
  const loc=useLocation(),key=loc.pathname+loc.search,viewport=useRef(null),content=useRef(null),flash=useRef(null),[desktop,setDesktop]=useState(()=>matchMedia('(min-width: 901px)').matches),[page,setPage]=useState(0),[total,setTotal]=useState(1),pending=useSyncExternalStore(subscribeNetwork,networkSnapshot,()=>0);
  const paged=desktop&&pagedRoutes.has(loc.pathname);

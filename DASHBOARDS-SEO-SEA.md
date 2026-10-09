@@ -108,3 +108,19 @@ Le bouton « Vue acheteur » ouvre les outils publics avec un bandeau de démons
 La vue acheteur permet d’explorer le diagnostic, le projet, le passeport, le comparateur et le budget. Elle ne transforme pas le compte pro en acheteur : les enregistrements de profils, favoris et demandes restent indisponibles. Les routes professionnelles conservent leurs contrôles d’accès ; la bascule ne modifie aucun rôle en base. Les comptes pros non validés restent sur leur page d’activation.
 
 Contrôles réalisés : navigation concessionnaire, aller-retour entre les vues, restauration de l’onglet et de la sélection, rechargement, formulaire de passeport sans écriture en aperçu, absence de débordement et défilement intérieur à 1440, 1024 et 390 pixels. Tests de données et règles de navigation : `node --test tests/professional-view.test.js tests/dashboard.test.js`.
+
+## Simulation guidée et repères énergie — 9 octobre 2026
+
+Le simulateur commence par un choix explicite de véhicule. Sans modèle sélectionné, il invite à feuilleter le catalogue ou à préciser ses besoins dans le diagnostic. Un modèle choisi ou une simulation sauvegardée reste accessible.
+
+Les nouvelles simulations utilisent les repères datés de `src/energy-reference.js` : Tarif Bleu EDF Base 6 kVA TTC 0,2001 €/kWh (barème août 2026) et scénario public à 0,50 €/kWh, situé dans l’intervalle Electra de 0,39 à 0,61 €/kWh via application (publication juillet 2026, exceptions autoroutières et badges). Le prix public n’est pas présenté comme une moyenne nationale. Des boutons permettent d’utiliser les heures creuses (0,1589 €) ou pleines (0,2142 €).
+
+La part de recharge domicile est un scénario modifiable (0, 50, 80 ou 100 %), pas une moyenne observée. L’étude Avere-France/UFE citée utilise 80 % domicile ou entreprise. Les valeurs déjà saisies ne sont pas remplacées automatiquement. Les autres hypothèses préremplies ne sont pas des moyennes actuelles.
+
+Ces références sont vérifiées manuellement, avec liens vers les sources dans le formulaire ; aucun flux tarifaire en temps réel n’est annoncé. Au-delà de 90 jours depuis la vérification, un avertissement invite à consulter les sources. Pour maintenir les données, vérifier les grilles puis mettre à jour valeurs et date dans le module. Les prix futurs ne sont pas garantis ; frais fixes de recharge et abonnement domestique restent exclus.
+
+Le bandeau de résultat est placé hors de la zone qui défile : gain, surcoût ou coûts comparables, avec montant mensuel du coût total de possession et durée. Il reste visible sur mobile et ordinateur. Les tests contrôlent le sens de variation, l’absence de choix automatique, la conservation des saisies et la visibilité du résultat.
+
+Accueil : nouvelle image extraite à 6,8 s du film existant `volteo-film-v4.mp4`, montrant la voiture entière. Affichage au ratio d’origine sans recadrage ; légende placée sous l’image.
+
+L’accueil défile verticalement dans le bloc central ; seuls le diagnostic et le projet restent paginés.
