@@ -4,6 +4,7 @@ import {publicPages} from './public-content';
 import {PublicRoot} from './PublicLanding';
 import './style.css';
 import './experience.css';
+import './journey-ux.css';
 const path=location.pathname.replace(/\/+$/,'')||'/';
 const root=document.getElementById('root');
 if(publicPages[path]){
@@ -11,6 +12,6 @@ if(publicPages[path]){
  if(root.dataset.prerendered==='public')hydrateRoot(root,tree);else createRoot(root).render(tree);
 }else{
  const client=createRoot(root);
- client.render(<main className="container" role="status"><p>Votre espace VOLTÉO se prépare…</p></main>);
+ client.render(location.pathname==='/'?<div className="boot-film" role="status"><span className="sr-only">Chargement de VOLTÉO…</span></div>:<main className="container" role="status"><p>Votre espace se prépare…</p></main>);
  import('./App').then(({default:App})=>client.render(<App/>)).catch(()=>client.render(<main className="container"><h1>Le chargement a été interrompu.</h1><button onClick={()=>location.reload()}>Réessayer</button></main>));
 }

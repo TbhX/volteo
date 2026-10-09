@@ -14,7 +14,7 @@ La connexion dirige un administrateur vers `/admin` et un concessionnaire valid�
 
 Lancer `npm ci`, puis `npm run dev`, et ouvrir `http://localhost:5173/demo-pro.html`.
 
-Identifiant : `admin`. Mot de passe : `admin`.
+Les accès de démonstration sont transmis séparément. Ne conservez aucun identifiant ou mot de passe de test dans le dépôt.
 
 Cette page utilise uniquement des données fictives, permet de basculer entre pro et admin et ne crée aucune session Supabase. Elle n’est pas une authentification de production. Elle n’est ni une entrée du build, ni importée par l’application publiée ; `dist/demo-pro.html` doit rester absent. Les vrais comptes restent soumis à Supabase Auth et aux rôles serveur existants. Les actions de gestion ne sont pas simulées dans cette démo.
 
@@ -124,3 +124,14 @@ Le bandeau de résultat est placé hors de la zone qui défile : gain, surcoût 
 Accueil : nouvelle image extraite à 6,8 s du film existant `volteo-film-v4.mp4`, montrant la voiture entière. Affichage au ratio d’origine sans recadrage ; légende placée sous l’image.
 
 L’accueil défile verticalement dans le bloc central ; seuls le diagnostic et le projet restent paginés.
+
+## Parcours acheteur — lisibilité et navigation
+- Défilement vertical dans toutes les rubriques ; suppression des pages horizontales du diagnostic et du projet.
+- Diagnostic : focus et défilement automatiques sur le résultat, résumé des critères, actions pour les modifier ou explorer le catalogue. Aucun élargissement automatique des critères, aucun score hors comparateur.
+- Projet : sélection présentée avant le récapitulatif et le passeport, focus sur le titre après validation.
+- Comparaison : barre compacte, réinitialisation de toute la sélection et bouton global dans le comparateur ; suppression persistée localement.
+- Localisation limitée aux rubriques locales, suppression du bandeau redondant parcours/passeport.
+- Prix présentés comme indicatifs ; provenance du catalogue de démonstration conservée dans les Sources et les explications.
+- Police variable Manrope auto-hébergée, sous licence SIL OFL jointe, sous-ensemble latin incluant le français. Aucun appel à un fournisseur de polices.
+- Avant le film : aperçu automobile plein écran remplaçant la page de chargement ; poster du film aligné sur le visuel complet de l’accueil.
+- Vérification : build et SEO, règles moteur, parcours navigateur ordinateur/mobile (résultat, reset persistant, score conditionnel), espace concession et transition acheteur.
