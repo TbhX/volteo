@@ -135,3 +135,19 @@ L’accueil défile verticalement dans le bloc central ; seuls le diagnostic et 
 - Police variable Manrope auto-hébergée, sous licence SIL OFL jointe, sous-ensemble latin incluant le français. Aucun appel à un fournisseur de polices.
 - Avant le film : aperçu automobile plein écran remplaçant la page de chargement ; poster du film aligné sur le visuel complet de l’accueil.
 - Vérification : build et SEO, règles moteur, parcours navigateur ordinateur/mobile (résultat, reset persistant, score conditionnel), espace concession et transition acheteur.
+
+## Positionnement : de la curiosité au projet automobile
+VOLTÉO accompagne les automobilistes curieux de l’électrique pour comprendre leur usage, leurs contraintes de recharge et leur budget, puis choisir un modèle et préparer un échange avec une concession. L’objectif partenaire est la qualité des projets et des rencontres, sans annoncer des gains avant le calcul ni garantir une vente.
+
+- Accueil et page partenaires : positionnement explicite, bénéfices de préparation du projet ; aucun volume de contacts ni taux de transformation promis.
+- Budget : comparaison « conserver mon thermique / acheter cet électrique ». L’énergie seule est distinguée du coût total. Gains et surcoûts sont présentés selon leur signe, avec hypothèses et bilan complet visibles. Le scénario initial est comptant, sans travaux présumés ; l’utilisateur choisit le crédit et renseigne les travaux nécessaires. Les anciennes hypothèses enregistrées sont conservées.
+- Calcul : intérêts selon amortissement pendant la détention, reventes initiales selon modèle/durée (hypothèses 15 % et 12 % de décote annuelle), projection cohérente avec les reventes saisies. Toute estimation de revente reste à confirmer.
+- Parcours : découverte → besoins/recharge → budget complet → offres → demande volontaire. Aucun partage automatique depuis le simulateur. Le dossier se complète dans le parcours existant et n’est joint qu’au choix de l’acheteur.
+- SEO : contenus, titres et descriptions alignés sur les questions de faisabilité, de coût et de préparation du projet ; distinction entre économies d’énergie et économie globale, FAQ sur l’exploration sans intention d’achat immédiate. Pas d’économies chiffrées promises dans les métadonnées.
+- SEA : trois intentions séparées (découverte/budget, recharge, essai local). Annonces de préparation mises à jour, limites de 30/90 caractères vérifiées. Aucun lancement de campagne ni dépense.
+- Mesure : ouvertures/clics secondaires existants ; demande partenaire réellement enregistrée comme conversion principale. Examiner ensuite contacts exploitables, rendez-vous confirmés et essais réalisés. Ne pas assimiler visite, simulation, demande et achat ; pas d’attribution commerciale inventée.
+- Activation toujours conditionnée aux paramètres de domaine, de consentement et de mesure existants. Le build local sans VITE_SITE_URL reste noindex ; ces modifications ne prouvent ni l’indexation ni une diffusion Ads.
+
+Références éditoriales et annonces consultées :
+- https://developers.google.com/search/docs/fundamentals/creating-helpful-content
+- https://support.google.com/google-ads/answer/7684791

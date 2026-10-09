@@ -1,14 +1,14 @@
 import {publicPages} from './public-content.js';
 export function siteOrigin(value=''){try{const u=new URL(value);return u.protocol==='https:'&&!u.username&&!u.password&&u.pathname==='/'&&!u.search&&!u.hash?u.origin:'';}catch{return '';}}
 export const routeMetadata={
- '/':['VOLTÉO — Comparez votre budget et passez à l’électrique','Comparez les voitures électriques, estimez votre coût total et préparez votre essai autour des Ulis.'],
+ '/':['VOLTÉO — Explorez votre projet de voiture électrique','De la curiosité au projet : besoins, recharge, budget et modèles adaptés. Préparez votre échange avec une concession autour des Ulis.'],
  '/catalogue':['Catalogue de voitures électriques | VOLTÉO','Comparez autonomie, recharge et budget des modèles électriques. Données indicatives à confirmer.'],
  '/comparateur':['Comparateur de voitures électriques | VOLTÉO','Comparez votre sélection selon votre usage, votre budget et vos possibilités de recharge.'],
- '/simulateur':['Simulateur de coût thermique et électrique | VOLTÉO','Estimez le coût total de votre voiture et d’un électrique : énergie, décote, entretien et financement.'],
+ '/simulateur':['Simulateur de coût thermique et électrique | VOLTÉO','Comparez vos dépenses à l’usage et le coût complet du passage à l’électrique. Hypothèses modifiables, gains et surcoûts expliqués.'],
  '/diagnostic':['Quel électrique pour mon usage ? | VOLTÉO','Identifiez les critères utiles à votre choix de voiture électrique.'],
  '/guides':['Guides voiture électrique | VOLTÉO','Comprendre le budget, la recharge et préparer un essai de voiture électrique.'],
  '/recharge':['Planifier sa recharge électrique | VOLTÉO','Estimez votre besoin quotidien de recharge selon vos trajets.'],
- '/partenaires':['Devenir partenaire VOLTÉO','Découvrez le parcours professionnel VOLTÉO et le suivi des demandes d’essai.'],
+ '/partenaires':['Devenir partenaire VOLTÉO','Accompagnez les automobilistes dans leur transition électrique : projets préparés, demandes choisies par les acheteurs et suivi des essais.'],
  '/pilote':['Pilote électrique autour des Ulis | VOLTÉO','Découvrez le pilote VOLTÉO et préparez votre passage à l’électrique.'],
  '/sources':['Sources et limites des données | VOLTÉO','Consultez la provenance et la fraîcheur des informations présentées.']
 };

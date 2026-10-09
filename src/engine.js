@@ -116,8 +116,20 @@ export function tco(v,p){
  const electricEnergy=p.km*v.conso/100*rate*1.1;const thermalEnergy=p.km*p.liters/100*p.fuel;
  const evRunning=electricEnergy+p.electricMaintenance+p.electricInsurance;
  const iceRunning=thermalEnergy+p.thermalMaintenance+p.thermalInsurance;
- // Simplified interest allocation over ownership horizon; principal only via depreciation.
- const electric=(v.priceMin-p.electricResale)+evRunning*p.years+p.installation+interest*Math.min(p.years*12/p.months,1);
+ // Amortization schedule: only interest paid during ownership, capital via depreciation.
+ let balance=principal,interestDuringOwnership=0;
+ for(let month=0;month<Math.min(Math.round(p.years*12),p.months);month++){
+  const monthlyInterest=balance*r;interestDuringOwnership+=monthlyInterest;
+  balance=Math.max(0,balance-(payment-monthlyInterest));
+ }
+ const electric=(v.priceMin-p.electricResale)+evRunning*p.years+p.installation+interestDuringOwnership;
  const thermal=(p.thermalValue-p.thermalResale)+iceRunning*p.years;
- return {payment,interest,electric,thermal,electricEnergy,thermalEnergy,evRunning,iceRunning,saving:thermal-electric,monthlyElectric:electric/p.years/12,monthlyThermal:thermal/p.years/12};
+ return {payment,interest,interestDuringOwnership,energySaving:thermalEnergy-electricEnergy,runningSaving:iceRunning-evRunning,transitionCost:(v.priceMin-p.electricResale)-(p.thermalValue-p.thermalResale)+p.installation+interestDuringOwnership,electric,thermal,electricEnergy,thermalEnergy,evRunning,iceRunning,saving:thermal-electric,monthlyElectric:electric/p.years/12,monthlyThermal:thermal/p.years/12};
+}
+
+// Illustrative resale assumptions, never market valuations.
+export function budgetResales(price,thermalValue,years){return {electricResale:Math.round(price*.85**years),thermalResale:Math.round(thermalValue*.88**years)};}
+export function projectBudget(v,p,years){
+ const resale=(initial,end)=>initial>0?initial*(Math.max(0,Math.min(initial,end))/initial)**(years/p.years):0;
+ return tco(v,{...p,years,electricResale:resale(v.priceMin,p.electricResale),thermalResale:resale(p.thermalValue,p.thermalResale)});
 }

@@ -8,7 +8,7 @@ export function SimulationLiveResult({result,years,vehicle}){
  const [target,setTarget]=useState(null);
  useEffect(()=>{setTarget(document.getElementById('simulation-summary-slot'));},[]);
  const d=simulationDifference(result.saving,years);
- return target?createPortal(<section className={'simulation-live '+d.kind} aria-label="Résultat de simulation toujours visible"><div><span>{d.label}</span><strong>{euros(d.monthly)}<small>/mois</small></strong><small>Coût total réparti sur {years} ans</small></div><div className="simulation-live-total"><span>{euros(d.total)} sur {years} ans</span><small>{vehicle.brand} {vehicle.model} · hypothèses modifiables</small></div><div className="simulation-live-costs"><span>Thermique <b>{euros(result.monthlyThermal)}/mois</b></span><span>Électrique <b>{euros(result.monthlyElectric)}/mois</b></span></div></section>,target):null;
+ return target?createPortal(<section className={'simulation-live '+d.kind} aria-label="Résultat de simulation toujours visible"><div><span>{d.label} · bilan complet</span><strong>{euros(d.monthly)}<small>/mois</small></strong><small>Coût total réparti sur {years} ans</small></div><div className="simulation-live-total"><span>{euros(d.total)} sur {years} ans</span><small>{vehicle.brand} {vehicle.model} · hypothèses modifiables</small></div><div className="simulation-live-costs"><span>{result.energySaving>=0?'Économie énergie':'Surcoût énergie'} <b>{euros(Math.abs(result.energySaving)/12)}/mois</b></span><span>Hors achat et autres frais</span></div></section>,target):null;
 }
 export function EnergyHelp({p,onChange,saved}){
  const stale=referencesStale();
