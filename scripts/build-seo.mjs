@@ -10,7 +10,7 @@ const origin=siteOrigin(env.VITE_SITE_URL);
 if(env.VITE_SITE_URL&&!origin)throw new Error('VITE_SITE_URL doit être une origine HTTPS sans chemin, identifiants ou paramètres.');
 if(env.SEO_REQUIRE_ORIGIN==='true'&&!origin)throw new Error('VITE_SITE_URL est requis pour une version indexable.');
 const template=await fs.readFile('dist/index.html','utf8');
-const vehicles=JSON.parse(await fs.readFile('server/vehicles.json','utf8'));
+const vehicles=[...JSON.parse(await fs.readFile('server/vehicles.json','utf8')),...JSON.parse(await fs.readFile('src/market-models.json','utf8'))];
 const escape=s=>String(s).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 function html(path,body=''){
  const m=metadata(path,origin,vehicles);let out=template.replace(/<title>[\s\S]*?<\/title>/,'').replace(/<meta name="description"[^>]*>/,'').replace(/<meta name="robots"[^>]*>/,'');
