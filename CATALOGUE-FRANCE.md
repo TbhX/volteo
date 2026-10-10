@@ -1,6 +1,6 @@
-# Catalogue France — couverture au 9 octobre 2026
+# Catalogue France — revue photographique du 10 octobre 2026
 
-Le catalogue historique comptait 37 fiches de démonstration. Il est complété par 147 fiches de découverte, pour 184 fiches modèles/carrosseries et 44 marques au total. Ce nombre ne compte pas les finitions, batteries et transmissions comme des modèles supplémentaires ; quelques carrosseries distinctes disposent de leur propre fiche.
+Le registre éditorial conserve 184 fiches modèles/carrosseries (37 historiques et 147 fiches de découverte). Le catalogue visible est limité à 78 fiches dotées d’une photographie documentée : 37 historiques et 41 nouvelles. Les 106 fiches sans photo validée sont masquées et leurs pages HTML ne sont pas générées. Ce nombre ne compte pas les finitions, batteries et transmissions comme des modèles supplémentaires ; quelques carrosseries distinctes disposent de leur propre fiche.
 
 ## Périmètre et preuves
 
@@ -20,7 +20,9 @@ Il ne s’agit pas d’une base exhaustive de tous les véhicules d’occasion, 
 - Les fiches de découverte disposent d’une URL interne, d’une page HTML de production, d’une source et de suites vers le dossier ou les offres locales.
 - Elles restent hors score, simulation et demande directe pour ne pas inventer de caractéristiques ou de stock. Les flux existants de comparaison, favoris et demandes restent sur les fiches historiques valides en base.
 - Les ajouts sont livrés comme registre éditorial versionné dans l’application. La base Supabase historique n’a pas reçu de fiches incomplètes ; aucun compte ou droit n’a été modifié.
-- Sans photographie documentée, la carte présente le nom de la marque plutôt qu’une image d’un autre véhicule.
+- Sans photographie documentée dans `src/vehicle-photos.json`, aucune carte ni fiche de découverte n’est publiée. Un échec de chargement retire également la carte et ajuste le compteur dans le catalogue.
+- Chaque photo ouvre la fiche, conserve son cadrage complet, possède deux tailles WebP hébergées localement et des crédits (auteur, source, licence, adaptations). Les 41 nouvelles photos ont été contrôlées visuellement ; vues intérieures et prototypes camouflés ont été remplacés. La finition photographiée peut différer de celle documentée.
+- La recherche reste immédiatement visible ; les filtres avancés se déplient pour laisser les images apparaître plus tôt sur mobile. Les aperçus de partage des fiches utilisent la photo du modèle.
 
 ## Entretien
 
@@ -30,4 +32,4 @@ Pour promouvoir une fiche vers les calculs : sélectionner une version et un mil
 
 ## Vérifications
 
-45 tests unitaires passent. Contrôles navigateur : 184 fiches, recherche avec/sans accents, exclusion des prix inconnus sous filtre budget, fiches constructeur et liens, rechargement et métadonnées, affichage mobile, comparaison historique préservée. Les 147 nouvelles routes ont un fichier HTML de production ; aucune nouvelle page véhicule n’est ajoutée automatiquement au sitemap.
+46 tests unitaires passent, dont la présence et le format des fichiers photographiques ainsi que leurs attributions. Contrôles navigateur : filtrage des modèles sans photo, recherche, exclusion des prix inconnus sous filtre budget, détail avec photo et source, rechargement et métadonnées, affichage mobile, retrait d’une carte après échec d’image, comparaison historique préservée. Le build ne génère que les 78 pages véhicule illustrées ; aucune page véhicule n’est ajoutée automatiquement au sitemap.

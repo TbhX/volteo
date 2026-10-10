@@ -1,1 +1,25 @@
-.market-card{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--bg);display:flex;flex-direction:column}.market-monogram{min-height:150px;padding:26px;display:flex;flex-direction:column;justify-content:space-between;font-size:30px;font-weight:750;letter-spacing:-.04em;background:linear-gradient(145deg,var(--glow),var(--surface))}.market-monogram span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.market-card .card-body{flex:1}.market-card p{font-size:13px}.market-filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 20px}.market-filters>small{grid-column:1/-1;color:var(--muted)}.market-budget-toggle{display:flex;align-items:center;gap:10px;font-size:13px}.market-budget-toggle input{width:18px;height:18px}.catalog-coverage summary{cursor:pointer;font-weight:650}.catalog-coverage p{max-width:85ch;font-size:13px}.market-detail .panel{max-width:950px}.market-detail>.eyebrow{margin-top:28px}@media(max-width:700px){.market-filters{grid-template-columns:1fr}.market-monogram{min-height:125px}}
+.market-card{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--bg);display:flex;flex-direction:column}.market-card .card-body{flex:1}.market-card p{font-size:13px}.market-filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 20px}.market-filters>small{grid-column:1/-1;color:var(--muted)}.market-budget-toggle{display:flex;align-items:center;gap:10px;font-size:13px}.market-budget-toggle input{width:18px;height:18px}.catalog-coverage summary{cursor:pointer;font-weight:650}.catalog-coverage p{max-width:85ch;font-size:13px}.market-detail .panel{max-width:950px}.market-detail>.eyebrow{margin-top:28px}@media(max-width:700px){.market-filters{grid-template-columns:1fr}}
+
+/* The photograph is the primary entry point; preserve the whole reference image. */
+.market-photo-link{position:relative;display:block;background:var(--surface-2);border-bottom:1px solid var(--line);overflow:hidden}
+.market-photo{display:block;width:100%;height:100%;object-fit:contain}
+.market-photo-link .market-photo{aspect-ratio:3/2;height:auto;object-fit:contain}
+.market-photo-cta{position:absolute;right:12px;bottom:12px;background:#08151ce8;color:#fff;border:1px solid #ffffff40;border-radius:99px;padding:8px 12px;font-size:11px}
+.market-photo-link:focus-visible,.catalog-page .card-art-link:focus-visible{outline:3px solid var(--green);outline-offset:-4px}
+.market-card{transition:border-color .18s,box-shadow .18s}
+.market-card:hover{border-color:var(--green);box-shadow:0 10px 28px #0002}
+.market-detail-photo{margin:24px 0;max-width:950px;background:var(--surface-2);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.market-detail-photo .market-photo{max-height:520px;height:auto;aspect-ratio:16/10;object-fit:contain}
+.market-detail-photo figcaption{padding:12px 18px;color:var(--muted);font-size:11px}
+.market-detail-photo figcaption a{color:var(--green)}
+.is-paged main.catalog-page .card .vehicle-photo,.catalog-page .card .vehicle-photo{height:auto!important;min-height:0;aspect-ratio:3/2!important}
+.is-paged main.catalog-page .card .vehicle-photo img,.catalog-page .card .vehicle-photo img{height:100%;object-fit:contain;transform:none}
+@media(max-width:700px){.market-detail-photo .market-photo{aspect-ratio:3/2}.market-card .card-body{padding:20px}}
+
+.catalog-page .market-filters{display:block;padding:16px 20px;margin:16px 0}
+.market-filter-options{margin-top:12px}
+.market-filter-options summary{cursor:pointer;color:var(--green);font-size:12px;font-weight:600}
+.market-filter-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+.market-filter-fields>small{grid-column:1/-1;color:var(--muted)}
+.catalog-page .catalog-coverage{padding:12px 18px;margin:12px 0;font-size:12px}
+@media(max-width:700px){.market-filter-fields{grid-template-columns:1fr}.catalog-page>h1{font-size:32px}.catalog-page>.intro{font-size:13px;line-height:1.5}}
