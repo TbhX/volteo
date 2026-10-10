@@ -7,7 +7,7 @@ export const routeMetadata={
  '/simulateur':['Simulateur de coût thermique et électrique | VOLTÉO','Comparez vos dépenses à l’usage et le coût complet du passage à l’électrique. Hypothèses modifiables, gains et surcoûts expliqués.'],
  '/diagnostic':['Quel électrique pour mon usage ? | VOLTÉO','Identifiez les critères utiles à votre choix de voiture électrique.'],
  '/guides':['Guides voiture électrique | VOLTÉO','Comprendre le budget, la recharge et préparer un essai de voiture électrique.'],
- '/recharge':['Planifier sa recharge électrique | VOLTÉO','Estimez votre besoin quotidien de recharge selon vos trajets.'],
+ '/recharge':['Planifier sa recharge électrique | VOLTÉO','Préparez votre recharge : borne à domicile, coût de pose, aides selon le logement, pilotage et piste solaire. Hypothèses et sources datées.'],
  '/partenaires':['Devenir partenaire VOLTÉO','Accompagnez les automobilistes dans leur transition électrique : projets préparés, demandes choisies par les acheteurs et suivi des essais.'],
  '/pilote':['Pilote électrique autour des Ulis | VOLTÉO','Découvrez le pilote VOLTÉO et préparez votre passage à l’électrique.'],
  '/sources':['Sources et limites des données | VOLTÉO','Consultez la provenance et la fraîcheur des informations présentées.']
