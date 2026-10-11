@@ -41,3 +41,6 @@ node scripts/check-release.mjs
 ```
 
 Référence de l’avertissement Auth : https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection
+
+## Disponibilités du catalogue
+Depuis Stock et offres, les concessions rattachées à un établissement vérifié du pilote peuvent déclarer les modèles illustrés de leurs marques validées. Une déclaration par établissement et modèle précise la version, le délai et une référence interne non publique. Elle expire au bout de sept jours ; reconfirmation et retrait sont explicites. La suspension du partenaire masque ses déclarations. Les modèles de découverte restent exclus des simulations et des scores. Aucun stock réel n’est créé automatiquement.

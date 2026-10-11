@@ -20,6 +20,27 @@ begin
  perform set_config('request.jwt.claims',jsonb_build_object('sub',dealer,'session_id',dealer,'role','authenticated')::text,true);
  off=public.volteo_api('/pilot/inventory','POST','{"vehicle_slug":"peugeot-e-208","trim":"GT test","cash_price":30000,"fees":0,"availability":"Test uniquement","terms":"Offre de test non réelle","source":"Test automatisé","stock_ack":true,"valid_days":7}');
  perform pg_temp.check(not(off ? 'error'),'offer creation: '||off::text);
+
+ r=public.volteo_api('/pilot/stock-models','PUT','{"vehicle_slug":"peugeot-e-208","trim":"GT batterie test","availability":"Sur parc test","reference":"Interne secret test","stock_ack":true}');
+ perform pg_temp.check(r->>'ok'='true','stock declaration creation: '||r::text);
+ update volteo_private.pilot_partners set data=jsonb_set(data,'{status}','"suspended"') where dealer_id=did;
+ perform pg_temp.check(jsonb_array_length(public.volteo_api('/pilot/availability'))=0,'suspended partner declarations hidden');
+ update volteo_private.pilot_partners set data=jsonb_set(data,'{status}','"verified"') where dealer_id=did;
+ perform pg_temp.check(public.volteo_api('/pilot/stock-models','PUT','{"vehicle_slug":"tesla-model-3","trim":"Test","availability":"Test","reference":"Test","stock_ack":true}')->>'status'='403','stock brand restrictions');
+
+ r=public.volteo_api('/pilot/availability');
+ perform pg_temp.check(jsonb_array_length(r)=1 and not(r->0 ? 'reference'),'public stock excludes internal reference');
+ perform pg_temp.check(public.volteo_api('/pilot/stock-models','PUT','{"vehicle_slug":"peugeot-e-208","trim":"GT test","availability":"Test","reference":"Test","stock_ack":true}')->>'status'='409','stock concurrency');
+ perform set_config('request.jwt.claims',jsonb_build_object('sub',dealer2,'session_id',dealer2,'role','authenticated')::text,true);
+ perform pg_temp.check(jsonb_array_length(public.volteo_api('/pilot/stock-models')->'items')=0,'private stock isolation');
+ perform pg_temp.check(public.volteo_api('/pilot/stock-models','PUT',jsonb_build_object('dealer_id',did,'vehicle_slug','peugeot-e-208','trim','Test','availability','Test','reference','Test','stock_ack',true))->>'status'='403','pending dealer cannot impersonate partner');
+ perform set_config('request.jwt.claims',jsonb_build_object('sub',buyer,'session_id',buyer,'role','authenticated')::text,true);
+ perform pg_temp.check(public.volteo_api('/pilot/stock-models')->>'status'='403','buyer cannot manage stock');
+ perform set_config('request.jwt.claims',jsonb_build_object('sub',dealer,'session_id',dealer,'role','authenticated')::text,true);
+ update volteo_private.stock_declarations set valid_until=0 where dealer_id=did;
+ perform pg_temp.check(jsonb_array_length(public.volteo_api('/pilot/availability'))=0,'expired stock hidden');
+ r=public.volteo_api('/pilot/stock-models')->'items'->0;
+ perform pg_temp.check(public.volteo_api('/pilot/stock-models','DELETE',jsonb_build_object('vehicle_slug','peugeot-e-208','expected_updated',r->'updated'))->>'ok'='true','owner can withdraw stock');
  r=public.volteo_api('/project','PUT','{}');perform pg_temp.check(r->>'status'='403','pro cannot use buyer project');
  perform set_config('request.jwt.claims',jsonb_build_object('sub',buyer,'session_id',buyer,'role','authenticated')::text,true);
  p='{"budget":40000,"km":25000,"daily":60,"seats":5,"charging":"home","usage":"mixed","category":"Toutes","postcode":"91940","horizon":"3months","payment":"finance","tradeIn":"undecided","parking":"private","chargingReady":"confirmed","chargeRate":0.29}';
