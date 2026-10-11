@@ -1,0 +1,6 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {networkReadiness,vehicleReview} from '../src/launch-readiness.js';
+import {securityHeaders} from '../src/security-headers.js';
+test('launch counts exclude suspended partners, expired and draft offers',()=>{assert.deepEqual(networkReadiness([{dealer_id:1,status:'verified'},{dealer_id:2,status:'suspended'}],[{dealer_id:1,status:'published',visible:true,valid_until:101},{dealer_id:2,status:'published',visible:true,valid_until:101},{dealer_id:1,status:'published',valid_until:99},{dealer_id:1,status:'draft',valid_until:101}],100),{partners:1,offers:1});});
+test('catalogue review flags missing provenance and indicative data',()=>{assert(vehicleReview({dataStatus:'Données indicatives'}).length>=6);});
+test('CSP restricts scripts, preserves Supabase and only enables configured measurement',()=>{const h=securityHeaders('https://example.supabase.co');assert(!h['Content-Security-Policy'].includes('google'));assert(h['Content-Security-Policy'].includes('https://example.supabase.co'));assert.equal(h['Referrer-Policy'],'no-referrer');assert(!/script-src[^;]*unsafe-/.test(h['Content-Security-Policy']));assert(securityHeaders('https://example.supabase.co',{analytics:true})['Content-Security-Policy'].includes('google-analytics.com'));assert.throws(()=>securityHeaders('https://evil.example'));});

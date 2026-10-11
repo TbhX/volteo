@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises';
+import {securityHeaders} from '../src/security-headers.js';
 import pathModule from 'node:path';
 import {createServer,loadEnv} from 'vite';
 import React from 'react';
@@ -31,6 +32,8 @@ try{
  // A real 404 response replaces the former catch-all 200 rewrite. Known SPA
  // routes each have their own HTML file, generated above.
  await fs.writeFile('dist/_redirects','# Extensionless routes resolve to generated HTML files. No catch-all 200.\n');
- await fs.writeFile('dist/_headers','/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n');
+ const cloud=JSON.parse(await fs.readFile('src/supabase-config.json','utf8'));
+ const headers=securityHeaders(cloud.url,{analytics:/^G-[A-Z0-9]+$/.test(env.VITE_GA4_ID||''),ads:/^AW-\d+$/.test(env.VITE_GOOGLE_ADS_ID||'')});
+ await fs.writeFile('dist/_headers','/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n/*\n'+Object.entries(headers).map(([key,value])=>'  '+key+': '+value+'\n').join(''));
  console.log(`SEO: ${publicPaths.length} pages éditoriales pré-rendues, ${indexable.length} URL dans le sitemap. ${origin||'Domaine absent : noindex.'}`);
 }finally{await server.close();}

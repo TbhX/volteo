@@ -2,7 +2,7 @@
 
 Les comptes, dossiers acheteurs, simulations, favoris, demandes, offres et espaces professionnels utilisent désormais le projet Supabase configuré. Les recherches locales passent par une Edge Function Supabase. La refonte UI/UX 4.5 et la vidéo complète sont conservées.
 
-Version 4.9 : vues desktop paginées sans défilement vertical, footer permanent, navigation précédente/suivante et transitions électriques. Voir **VALIDATION-V4.9.md**.
+Interface actuelle : défilement vertical dans le bloc de contenu, catalogue photographique, parcours budget et recharge à domicile. Voir **LANCEMENT.md** pour l’audit et les étapes nécessaires avant ouverture commerciale.
 
 Données 4.7 : base nationale IRVE et flux dynamique raccordés, actualisation automatique des carburants et offres affichées, page Sources et fraîcheur. Les prix véhicules et les guides restent de démonstration : aucun flux constructeur ou stock concessionnaire n’est raccordé. Voir **VALIDATION-V4.7.md**.
 
@@ -10,7 +10,7 @@ Données 4.7 : base nationale IRVE et flux dynamique raccordés, actualisation a
 
 Sur Windows, lancer **START-WINDOWS.bat**. Sur macOS/Linux : `sh START-MAC-LINUX.sh`. Ouvrir **http://localhost:8080**. Python 3.11+ suffit pour servir la version compilée fournie ; une connexion Internet est nécessaire pour Supabase. Les données enregistrées sont distantes, même si le site est ouvert sur localhost.
 
-Le projet Supabase est raccordé et ses migrations sont appliquées. L’interface n’est pas encore publiée sur un domaine. Les URL de retour Auth et l’expéditeur email doivent être configurés avant les inscriptions publiques : lire **SUPABASE.md**.
+Le projet Supabase est raccordé et ses migrations sont appliquées. L’interface est publiée sur https://volteo-4xj.pages.dev/ ; son indexation est actuellement désactivée. Les URL de retour Auth et l’expéditeur email doivent être configurés avant les inscriptions publiques : lire **SUPABASE.md**.
 
 ## Sources
 

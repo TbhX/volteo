@@ -26,3 +26,7 @@ Cette note remplace les descriptions de sécurité SQLite des versions précéde
 - Conserver une CSP stricte et maîtriser les scripts tiers : les jetons de session stockés dans le navigateur seraient exposés en cas de faille XSS.
 
 Référence du signalement Auth : https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection
+
+## Contrôle du 11 octobre 2026
+
+Les 17 tables métier distantes ont RLS activée. L’advisor signale encore la protection contre les mots de passe compromis désactivée. La CSP est désormais générée pour Cloudflare Pages ; voir LANCEMENT.md pour les limites et les vérifications d’exploitation restantes.
