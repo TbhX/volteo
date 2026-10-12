@@ -31,3 +31,20 @@ test('Only confirmed selected compatible vehicles receive comparison scores',()=
  assert.equal(result[2].match,null);
  assert.equal(comparisonSelection([v],['v'],{...defaults,budget:''},true)[0].match,null);
 });
+
+test('Comparison priorities alter weights without bypassing eligibility or confirmation',()=>{
+ const car={slug:'car',brand:'Test',model:'EV',priceMin:30000,autonomy:450,fastKW:70,conso:15,seats:5,category:'SUV'};
+ const balanced=comparisonSelection([car],['car'],defaults,true)[0].match;
+ const charging=comparisonSelection([car],['car'],defaults,true,{recharge:5,autonomy:1,budget:1,efficiency:1})[0].match;
+ assert(charging.weights.recharge>balanced.weights.recharge);
+ assert(charging.score<balanced.score);
+ assert(Math.abs(Object.values(charging.weights).reduce((a,b)=>a+b,0)-1)<1e-10);
+ assert.equal(comparisonSelection([car],['car'],{...defaults,budget:20000},true,{budget:1})[0].match,null);
+ assert.equal(comparisonSelection([car],['car'],defaults,false,{recharge:5})[0].match,null);
+ assert.equal(comparisonSelection([car],['car'],{...defaults,seats:2.5},true)[0].match,null);
+});
+test('An otherwise identical cheaper eligible model has no worse budget adequacy',()=>{
+ const car={priceMin:35000,autonomy:450,fastKW:100,conso:16,seats:5,category:'SUV'};
+ const cheaper=scoreVehicle({...car,priceMin:25000},defaults),expensive=scoreVehicle(car,defaults);
+ assert(cheaper.criteria.find(c=>c.key==='budget').score>expensive.criteria.find(c=>c.key==='budget').score);
+});

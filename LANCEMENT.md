@@ -47,3 +47,6 @@ Depuis Stock et offres, les concessions rattachées à un établissement vérifi
 
 ## Rendez-vous exclusivement partenaires
 Toutes les fiches illustrées proposent une demande auprès d’une concession VOLTÉO active de la marque. Aucune offre chiffrée préalable n’est obligatoire. Les coordonnées sont transmises uniquement au partenaire choisi et avec consentement. Le professionnel doit confirmer explicitement le stock avant chaque planification ou replanification ; cette confirmation est datée dans la demande. La recherche de concessions sur la carte utilise uniquement le réseau validé. Les fiches ne renvoient plus vers un constructeur pour acheter ou prendre rendez-vous.
+
+## Comparaison visuelle et priorités
+Le comparateur conserve l’ordre des modèles choisis et affiche les scores uniquement après confirmation des critères, pour les modèles compatibles. Les modifications suivantes recalculent l’analyse immédiatement. Quatre priorités de 1 à 5 modulent les poids liés à l’usage ; trois préréglages sont proposés. Les barres montrent des valeurs brutes avec zéro comme origine et une échelle commune par indicateur. Les indicateurs sont sélectionnables et une vue tableau reste accessible. Les contraintes de budget, places, format et trajet ne peuvent pas être contournées par les poids.

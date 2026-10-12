@@ -30,7 +30,7 @@ function criterionDetail(key,score,p,v){
  * vers ce qui compte vraiment pour lui. Les critères restent visibles dans
  * l'interface afin d'éviter l'effet « boîte noire ».
  */
-export function scoreVehicle(v,input={}){
+export function scoreVehicle(v,input={},priorities={}){
  const p=profileFor(input);
  const daily=Math.max(0,number(p.daily,defaults.daily));
  const km=Math.max(0,number(p.km,defaults.km));
@@ -43,7 +43,7 @@ export function scoreVehicle(v,input={}){
  const fastKW=number(v.fastKW,0);
  const conso=number(v.conso,18);
  const vehicleSeats=number(v.seats,0);
- const budgetScore=price<=budget?100-((budget-price)/budget)*35:100-((price-budget)/budget)*150;
+ const budgetScore=price<=budget?100-(price/budget)*30:100-((price-budget)/budget)*150;
  const autonomyScore=clamp(autonomy/Math.max(requiredRange,1)*100);
  const rechargeScore=clamp(fastKW/Math.max(chargeTarget,1)*100);
  const efficiencyScore=clamp(100-(conso-13)*7);
@@ -56,6 +56,7 @@ export function scoreVehicle(v,input={}){
  if(p.charging==='work')weights.recharge+=.05;
  if(km>=20000){weights.efficiency+=.05;weights.autonomy+=.03;weights.budget-=.05;}
  if(seats>5){weights.seats+=.08;weights.budget-=.03;}
+ for(const key of ['budget','autonomy','recharge','efficiency']){if(Object.hasOwn(priorities,key))weights[key]*=clamp(priorities[key],1,5)/3;}
  const totalWeight=Object.values(weights).reduce((sum,value)=>sum+Math.max(.01,value),0);
  const normalized=Object.fromEntries(Object.entries(weights).map(([key,value])=>[key,Math.max(.01,value)/totalWeight]));
  const raw={budget:budgetScore,autonomy:autonomyScore,recharge:rechargeScore,efficiency:efficiencyScore,seats:seatsScore,format:formatScore};
@@ -84,7 +85,7 @@ export function scoreVehicle(v,input={}){
 // Eligibility is separate from scoring: no ranking or numeric score in discovery.
 export function assessVehicle(v,p={}){
  const valid=['budget','daily','km','seats'].every(k=>p[k]!==''&&p[k]!=null&&Number.isFinite(Number(p[k])))
-  &&p.budget>=1000&&p.daily>=0&&p.km>=0&&p.seats>=1
+  &&p.budget>=1000&&p.budget<=500000&&p.daily>=0&&p.daily<=1000&&p.km>=0&&p.km<=200000&&Number.isInteger(Number(p.seats))&&p.seats>=1&&p.seats<=9
   &&['home','work','public'].includes(p.charging)&&['city','mixed','highway'].includes(p.usage)&&!!p.category;
  const reasons=[];
  if(!valid)return {eligible:false,reasons:['Complétez vos critères avant l’analyse.']};
@@ -101,10 +102,10 @@ export function assessVehicle(v,p={}){
 export function recommend(vehicles,p={}){
  return vehicles.map(v=>({...v,...assessVehicle(v,p)})).filter(v=>v.eligible);
 }
-export function comparisonSelection(vehicles,selected,profile,confirmed){
+export function comparisonSelection(vehicles,selected,profile,confirmed,priorities={}){
  return selected.map(slug=>vehicles.find(v=>v.slug===slug)).filter(Boolean).map(v=>{
   const assessment=assessVehicle(v,profile);
-  return {...v,assessment,match:confirmed&&assessment.eligible?scoreVehicle(v,profile):null};
+  return {...v,assessment,match:confirmed&&assessment.eligible?scoreVehicle(v,profile,priorities):null};
  });
 }
 export const tcoDefaults={km:15000,years:5,fuel:1.85,liters:6,homeRate:.25,publicRate:.6,homeShare:80,electricMaintenance:350,thermalMaintenance:700,electricInsurance:700,thermalInsurance:650,thermalValue:15000,thermalResale:6000,electricResale:18000,deposit:5000,months:60,apr:4,installation:1200};
