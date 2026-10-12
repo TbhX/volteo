@@ -1,3 +1,4 @@
+import catalogueModels from './market-models.json';
 import React,{useEffect,useMemo,useRef,useState} from 'react';
 import {Link,useSearchParams} from 'react-router-dom';
 import {api} from './api';
@@ -19,7 +20,7 @@ export default function Dashboard({app:a,source=api,demo=false}){
  useEffect(()=>{setData(null);load();return()=>{request.current++;};},[a.user?.id,admin,source]);
  useEffect(()=>{setPage(1);},[query,status,days,dealer,includeDemo]);
  const model=useMemo(()=>dashboardModel({...data,days,dealer,includeDemo,now:(stamp||Date.now())/1000}),[data,days,dealer,includeDemo,stamp]);
- const modelName=slug=>{const v=a.vehicles.find(v=>v.slug===slug);return v?`${v.brand} ${v.model}`:slug;};
+ const modelName=slug=>{const v=[...a.vehicles,...catalogueModels].find(v=>v.slug===slug);return v?`${v.brand} ${v.model}`:slug;};
  const dealerName=id=>a.dealers.find(d=>String(d.id)===String(id))?.name||'Établissement non renseigné';
  const filtered=model.current.filter(l=>(status==='Tous'||l.status===status)&&[l.name,modelName(l.vehicle_slug),dealerName(l.dealer_id)].join(' ').toLocaleLowerCase('fr').includes(query.toLocaleLowerCase('fr'))).sort((x,y)=>Number(y.created)-Number(x.created));
  function download(){const url=URL.createObjectURL(new Blob([dashboardCsv(model)],{type:'text/csv;charset=utf-8'}));const link=document.createElement('a');link.href=url;link.download=`volteo-indicateurs-${days}j.csv`;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}

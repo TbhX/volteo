@@ -44,6 +44,12 @@ begin
  r=public.volteo_api('/project','PUT','{}');perform pg_temp.check(r->>'status'='403','pro cannot use buyer project');
  perform set_config('request.jwt.claims',jsonb_build_object('sub',buyer,'session_id',buyer,'role','authenticated')::text,true);
  p='{"budget":40000,"km":25000,"daily":60,"seats":5,"charging":"home","usage":"mixed","category":"Toutes","postcode":"91940","horizon":"3months","payment":"finance","tradeIn":"undecided","parking":"private","chargingReady":"confirmed","chargeRate":0.29}';
+
+ r=public.volteo_api('/leads','POST',jsonb_build_object('vehicle','peugeot-e-3008','dealer_id',did,'phone','0612345678','consent',true,'message','Demande découverte'));
+ perform pg_temp.check(r ? 'id','discovery model request without commercial offer: '||r::text);
+ perform pg_temp.check((select trial->>'mode'='partner' from volteo_private.lead_details where lead_id=r->>'id'),'discovery request partner mode');
+ perform public.volteo_api('/leads/'||(r->>'id'),'DELETE');
+ perform pg_temp.check(public.volteo_api('/leads','POST','{"vehicle":"peugeot-e-208","dealer_id":1,"phone":"0612345678","consent":true}')->>'status'='400','unvalidated dealer request rejected');
  r=public.volteo_api('/project','PUT',p);perform pg_temp.check(r->'project'->>'km'='25000','project saved: '||r::text);
  r=public.volteo_api('/me');perform pg_temp.check(r->'profile'->>'km'='25000','profile coherence');
  r=public.volteo_api('/favorites/peugeot-e-208','PUT');perform pg_temp.check(r->>'ok'='true','favorite');
@@ -62,7 +68,10 @@ begin
  r=public.volteo_api('/pilot/inventory/'||(off->>'id'),'PUT',off||jsonb_build_object('expected_updated',off->'updated'));perform pg_temp.check(r->>'status'='403','other dealer cannot edit offer: '||r::text);
  perform set_config('request.jwt.claims',jsonb_build_object('sub',dealer,'session_id',dealer,'role','authenticated')::text,true);
  lead=public.volteo_api('/leads')->0;perform pg_temp.check(lead->>'id'=lid and not(lead ? 'attendance_code'),'dealer assigned lead without code');
+
  r=public.volteo_api('/leads/'||lid,'PATCH',jsonb_build_object('status','Essai planifié','appointment',extract(epoch from now())+60,'expected_updated',lead->'updated'));
+ perform pg_temp.check(r->>'status'='400','appointment requires explicit stock confirmation');
+ r=public.volteo_api('/leads/'||lid,'PATCH',jsonb_build_object('stock_confirmed',true,'status','Essai planifié','appointment',extract(epoch from now())+60,'expected_updated',lead->'updated'));
  perform pg_temp.check(r->>'ok'='true','appointment: '||r::text);
  r=public.volteo_api('/leads/'||lid,'PATCH',jsonb_build_object('status','Contacté','expected_updated',lead->'updated'));perform pg_temp.check(r->>'status'='409','optimistic conflict');
  perform set_config('request.jwt.claims',jsonb_build_object('sub',buyer,'session_id',buyer,'role','authenticated')::text,true);

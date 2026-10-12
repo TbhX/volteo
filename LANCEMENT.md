@@ -44,3 +44,6 @@ Référence de l’avertissement Auth : https://supabase.com/docs/guides/auth/pa
 
 ## Disponibilités du catalogue
 Depuis Stock et offres, les concessions rattachées à un établissement vérifié du pilote peuvent déclarer les modèles illustrés de leurs marques validées. Une déclaration par établissement et modèle précise la version, le délai et une référence interne non publique. Elle expire au bout de sept jours ; reconfirmation et retrait sont explicites. La suspension du partenaire masque ses déclarations. Les modèles de découverte restent exclus des simulations et des scores. Aucun stock réel n’est créé automatiquement.
+
+## Rendez-vous exclusivement partenaires
+Toutes les fiches illustrées proposent une demande auprès d’une concession VOLTÉO active de la marque. Aucune offre chiffrée préalable n’est obligatoire. Les coordonnées sont transmises uniquement au partenaire choisi et avec consentement. Le professionnel doit confirmer explicitement le stock avant chaque planification ou replanification ; cette confirmation est datée dans la demande. La recherche de concessions sur la carte utilise uniquement le réseau validé. Les fiches ne renvoient plus vers un constructeur pour acheter ou prendre rendez-vous.
